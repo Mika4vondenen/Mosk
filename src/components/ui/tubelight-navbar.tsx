@@ -17,6 +17,7 @@ interface NavBarProps {
 export function NavBar({ items, className }: NavBarProps) {
   const [activeTab, setActiveTab] = useState(items[0].name)
   const [isMobile, setIsMobile] = useState(false)
+  const [isAnimating, setIsAnimating] = useState(false)
 
   useEffect(() => {
     const handleResize = () => {
@@ -39,8 +40,14 @@ export function NavBar({ items, className }: NavBarProps) {
             <button
               key={item.name}
               onClick={() => {
-                setActiveTab(item.name)
-                item.onClick?.()
+                if (!isAnimating) {
+                  setIsAnimating(true)
+                  setActiveTab(item.name)
+                  setTimeout(() => {
+                    item.onClick?.()
+                    setTimeout(() => setIsAnimating(false), 50)
+                  }, 150)
+                }
               }}
               className={cn(
                 "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-all",
@@ -59,9 +66,10 @@ export function NavBar({ items, className }: NavBarProps) {
                   initial={false}
                   transition={{
                     type: "spring",
-                    stiffness: 300,
-                    damping: 30,
+                    stiffness: 400,
+                    damping: 35,
                   }}
+                  layout
                 >
                   <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-white rounded-t-full">
                     <div className="absolute w-12 h-6 bg-white/10 rounded-full blur-md -top-2 -left-2" />
