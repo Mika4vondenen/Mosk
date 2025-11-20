@@ -54,13 +54,15 @@ export function NavBar({ items, className }: NavBarProps) {
               </span>
               {isActive && (
                 <motion.div
-                  layoutId={`lamp-${item.name}`}
                   className="absolute inset-0 w-full bg-white/5 rounded-full -z-10"
-                  initial={false}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
                   transition={{
                     type: "spring",
                     stiffness: 300,
                     damping: 30,
+                    duration: 0.3,
                   }}
                 >
                   <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-white rounded-t-full">
