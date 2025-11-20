@@ -162,7 +162,7 @@ export default function Contact() {
                 Starten wir Ihr Projekt.
               </h4>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Ob Produktfotografie, Videoproduktion oder professionelles Editing – Ich setze Ihre Ideen professionell um. Kontaktieren Sie uns für ein unverbindliches Erstgespräch.
+                Ob Produktfotografie, Videoproduktion oder professionelles Editing – Ich setze Ihre Ideen professionell um. Kontaktieren Sie mich für ein unverbindliches Erstgespräch.
               </p>
               <div className="flex items-center gap-2 text-[#F5B700] font-semibold">
                 <Clock size={20} />
