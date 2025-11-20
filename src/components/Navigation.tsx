@@ -6,17 +6,17 @@ export default function Navigation() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const scrollToSection = (id: string) => {
+  const scrollToContact = () => {
     if (location.pathname !== '/') {
       navigate('/');
       setTimeout(() => {
-        const element = document.getElementById(id);
+        const element = document.getElementById('contact');
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
         }
       }, 100);
     } else {
-      const element = document.getElementById(id);
+      const element = document.getElementById('contact');
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
@@ -24,10 +24,10 @@ export default function Navigation() {
   };
 
   const navItems = [
-    { name: 'Leistungen', icon: Zap, onClick: () => scrollToSection('services') },
+    { name: 'Leistungen', icon: Zap, onClick: () => navigate('/services') },
     { name: 'Über uns', icon: Info, onClick: () => navigate('/about') },
-    { name: 'Portfolio', icon: Image, onClick: () => scrollToSection('portfolio') },
-    { name: 'Kontakt', icon: Mail, onClick: () => scrollToSection('contact') },
+    { name: 'Portfolio', icon: Image, onClick: () => navigate('/portfolio') },
+    { name: 'Kontakt', icon: Mail, onClick: () => scrollToContact() },
   ]
 
   return (
