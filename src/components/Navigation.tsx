@@ -1,4 +1,4 @@
-import { Zap, Info, Image, Mail } from 'lucide-react';
+import { Home, Zap, Info, Image, Mail } from 'lucide-react';
 import { NavBar } from './ui/tubelight-navbar';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -32,7 +32,7 @@ export default function Navigation() {
           }
         }
 
-        setActiveSection('');
+        setActiveSection('Home');
       }
     };
 
@@ -64,6 +64,7 @@ export default function Navigation() {
   };
 
   const navItems = [
+    { name: 'Home', icon: Home, onClick: () => goToHome() },
     { name: 'Leistungen', icon: Zap, onClick: () => navigate('/services') },
     { name: 'Über uns', icon: Info, onClick: () => navigate('/about') },
     { name: 'Portfolio', icon: Image, onClick: () => navigate('/portfolio') },
