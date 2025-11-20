@@ -15,16 +15,19 @@ const InteractiveHoverButton = React.forwardRef<
     <button
       ref={ref}
       className={cn(
-        "group relative cursor-pointer overflow-hidden rounded-lg bg-[#F5B700] px-8 py-4 text-center font-bold text-lg text-[#0A1F44] transition-all duration-300 shadow-xl hover:shadow-2xl hover:bg-[#ffc61a]",
+        "group relative w-32 cursor-pointer overflow-hidden rounded-full border bg-background p-2 text-center font-semibold",
         className,
       )}
       {...props}
     >
-      <span className="inline-flex items-center gap-3 translate-x-0 transition-all duration-300 group-hover:translate-x-2">
+      <span className="inline-block translate-x-1 transition-all duration-300 group-hover:translate-x-12 group-hover:opacity-0">
         {text}
-        <ArrowRight size={20} className="transition-transform duration-300 group-hover:translate-x-1" />
       </span>
-      <div className="absolute inset-0 h-full w-0 bg-[#ffc61a]/20 transition-all duration-300 group-hover:w-full -z-10 rounded-lg"></div>
+      <div className="absolute top-0 z-10 flex h-full w-full translate-x-12 items-center justify-center gap-2 text-primary-foreground opacity-0 transition-all duration-300 group-hover:-translate-x-1 group-hover:opacity-100">
+        <span>{text}</span>
+        <ArrowRight />
+      </div>
+      <div className="absolute left-[20%] top-[40%] h-2 w-2 scale-[1] rounded-lg bg-primary transition-all duration-300 group-hover:left-[0%] group-hover:top-[0%] group-hover:h-full group-hover:w-full group-hover:scale-[1.8] group-hover:bg-primary"></div>
     </button>
   );
 });
