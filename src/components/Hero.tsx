@@ -5,6 +5,9 @@ export default function Hero() {
   const images = [
     '/assets/982564cf-d447-492e-a99f-f592f3f4d981.png',
     '/assets/f61c5e57-a3c5-4a50-99e0-637f33fef76b.png',
+    '/assets/1105c6fad5acd8f577e029507ede4ecb.jpg',
+    '/assets/ae34acb9c11037409e099ce4fbe3421e.jpg',
+    '/assets/0eb6cd7f73a1fae9b14e85cb4c820aae.jpg',
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
