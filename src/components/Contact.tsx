@@ -51,7 +51,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-black text-white focus:border-[#F5B700] focus:ring-2 focus:ring-[#F5B700] focus:ring-opacity-50 transition-all duration-300 outline-none placeholder-gray-400"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-[#171717] text-white focus:border-[#F5B700] focus:ring-2 focus:ring-[#F5B700] focus:ring-opacity-50 transition-all duration-300 outline-none placeholder-gray-400"
                   placeholder="Ihr Name"
                 />
               </div>
@@ -67,7 +67,7 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-black text-white focus:border-[#F5B700] focus:ring-2 focus:ring-[#F5B700] focus:ring-opacity-50 transition-all duration-300 outline-none placeholder-gray-400"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-[#171717] text-white focus:border-[#F5B700] focus:ring-2 focus:ring-[#F5B700] focus:ring-opacity-50 transition-all duration-300 outline-none placeholder-gray-400"
                   placeholder="ihre@email.de"
                 />
               </div>
@@ -82,7 +82,7 @@ export default function Contact() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-black text-white focus:border-[#F5B700] focus:ring-2 focus:ring-[#F5B700] focus:ring-opacity-50 transition-all duration-300 outline-none placeholder-gray-400"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-[#171717] text-white focus:border-[#F5B700] focus:ring-2 focus:ring-[#F5B700] focus:ring-opacity-50 transition-all duration-300 outline-none placeholder-gray-400"
                   placeholder="Optional"
                 />
               </div>
@@ -98,7 +98,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-black text-white focus:border-[#F5B700] focus:ring-2 focus:ring-[#F5B700] focus:ring-opacity-50 transition-all duration-300 outline-none resize-none placeholder-gray-400"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-[#171717] text-white focus:border-[#F5B700] focus:ring-2 focus:ring-[#F5B700] focus:ring-opacity-50 transition-all duration-300 outline-none resize-none placeholder-gray-400"
                   placeholder="Beschreiben Sie Ihr Projekt..."
                 ></textarea>
               </div>
