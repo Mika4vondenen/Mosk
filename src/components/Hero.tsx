@@ -8,6 +8,7 @@ export default function Hero() {
     '/assets/1105c6fad5acd8f577e029507ede4ecb.jpg',
     '/assets/ae34acb9c11037409e099ce4fbe3421e.jpg',
     '/assets/0eb6cd7f73a1fae9b14e85cb4c820aae.jpg',
+    '/assets/1d26fb92-f725-4f82-8838-d35c9c7fe8b1.png',
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
