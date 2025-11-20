@@ -159,10 +159,10 @@ export default function Contact() {
 
             <div className="bg-gradient-to-br from-[#0A1F44] to-[#0d2a5c] p-8 rounded-xl">
               <h4 className="text-2xl font-bold text-white mb-4">
-                Bereit für Ihr Projekt?
+                Starten wir Ihr Projekt.
               </h4>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Ob Produktfotografie, Videoproduktion oder professionelles Editing – wir setzen Ihre Ideen professionell um. Kontaktieren Sie uns für ein unverbindliches Erstgespräch.
+                Ob Produktfotografie, Videoproduktion oder professionelles Editing – Ich setze Ihre Ideen professionell um. Kontaktieren Sie uns für ein unverbindliches Erstgespräch.
               </p>
               <div className="flex items-center gap-2 text-[#F5B700] font-semibold">
                 <Clock size={20} />
