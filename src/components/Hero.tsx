@@ -8,15 +8,10 @@ export default function Hero() {
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setFadeOut(true);
-      setTimeout(() => {
-        setCurrentImageIndex((prev) => (prev + 1) % images.length);
-        setFadeOut(false);
-      }, 1000);
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
     }, 5000);
 
     return () => clearInterval(interval);
@@ -31,13 +26,16 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0A1F44] via-[#0d2a5c] to-[#0A1F44] pt-20">
-      <div
-        className={`absolute inset-0 bg-cover bg-center opacity-80 transition-opacity duration-1000`}
-        style={{
-          backgroundImage: `url('${images[currentImageIndex]}')`,
-          opacity: fadeOut ? 0 : 0.8,
-        }}
-      ></div>
+      {images.map((image, index) => (
+        <div
+          key={image}
+          className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
+          style={{
+            backgroundImage: `url('${image}')`,
+            opacity: currentImageIndex === index ? 0.8 : 0,
+          }}
+        ></div>
+      ))}
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
