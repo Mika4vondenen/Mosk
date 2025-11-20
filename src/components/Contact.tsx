@@ -157,14 +157,14 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="bg-[#2B2B2B] p-8 rounded-xl">
+            <div className="bg-[#D97C0B] p-8 rounded-xl">
               <h4 className="text-2xl font-bold text-white mb-4">
                 Starten wir Ihr Projekt.
               </h4>
               <p className="text-white mb-6 leading-relaxed">
                 Ob Produktfotografie, Videoproduktion oder professionelles Editing – Ich setze Ihre Ideen professionell um. Kontaktieren Sie mich für ein unverbindliches Erstgespräch.
               </p>
-              <div className="flex items-center gap-2 text-[#E48F00] font-semibold">
+              <div className="flex items-center gap-2 text-[#FFB400] font-semibold">
                 <Clock size={20} />
                 <span>Antwort innerhalb von 24 Stunden</span>
               </div>
