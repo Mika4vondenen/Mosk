@@ -7,6 +7,7 @@ export default function Navigation() {
   const navigate = useNavigate();
   const location = useLocation();
   const [activeSection, setActiveSection] = useState('');
+  const [isScrolling, setIsScrolling] = useState(false);
 
   useEffect(() => {
     if (location.pathname === '/services') {
@@ -22,6 +23,8 @@ export default function Navigation() {
 
     if (location.pathname === '/') {
       const handleScroll = () => {
+        if (isScrolling) return;
+
         const scrollPosition = window.scrollY;
         const contactSection = document.getElementById('contact');
 
@@ -45,7 +48,7 @@ export default function Navigation() {
     } else {
       setActiveSection('Home');
     }
-  }, [location.pathname]);
+  }, [location.pathname, isScrolling]);
 
   const scrollToContact = () => {
     if (location.pathname !== '/') {
@@ -53,21 +56,27 @@ export default function Navigation() {
       setTimeout(() => {
         const element = document.getElementById('contact');
         if (element) {
+          setIsScrolling(true);
           element.scrollIntoView({ behavior: 'smooth' });
+          setTimeout(() => setIsScrolling(false), 1000);
         }
       }, 100);
     } else {
       const element = document.getElementById('contact');
       if (element) {
+        setIsScrolling(true);
         element.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => setIsScrolling(false), 1000);
       }
     }
   };
 
   const goToHome = () => {
+    setIsScrolling(true);
     window.scrollTo({ top: 0, behavior: 'auto' });
     setActiveSection('Home');
     navigate('/');
+    setTimeout(() => setIsScrolling(false), 100);
   };
 
   const navItems = [
