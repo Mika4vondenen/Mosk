@@ -10,23 +10,28 @@ export default function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const contactSection = document.getElementById('contact');
-
-      if (contactSection) {
-        const contactRect = contactSection.getBoundingClientRect();
-        if (contactRect.top < window.innerHeight / 2) {
-          setActiveSection('Kontakt');
-          return;
-        }
-      }
-
       if (location.pathname === '/services') {
         setActiveSection('Leistungen');
+        return;
       } else if (location.pathname === '/about') {
         setActiveSection('Über uns');
+        return;
       } else if (location.pathname === '/portfolio') {
         setActiveSection('Portfolio');
-      } else {
+        return;
+      }
+
+      if (location.pathname === '/') {
+        const contactSection = document.getElementById('contact');
+
+        if (contactSection) {
+          const contactRect = contactSection.getBoundingClientRect();
+          if (contactRect.top < window.innerHeight / 2) {
+            setActiveSection('Kontakt');
+            return;
+          }
+        }
+
         setActiveSection('');
       }
     };
