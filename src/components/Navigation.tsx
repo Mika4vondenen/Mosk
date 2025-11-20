@@ -9,36 +9,42 @@ export default function Navigation() {
   const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (location.pathname === '/services') {
-        setActiveSection('Leistungen');
-        return;
-      } else if (location.pathname === '/about') {
-        setActiveSection('Über uns');
-        return;
-      } else if (location.pathname === '/portfolio') {
-        setActiveSection('Portfolio');
-        return;
-      }
+    if (location.pathname === '/services') {
+      setActiveSection('Leistungen');
+      return;
+    } else if (location.pathname === '/about') {
+      setActiveSection('Über uns');
+      return;
+    } else if (location.pathname === '/portfolio') {
+      setActiveSection('Portfolio');
+      return;
+    }
 
-      if (location.pathname === '/') {
+    if (location.pathname === '/') {
+      const handleScroll = () => {
+        const scrollPosition = window.scrollY;
         const contactSection = document.getElementById('contact');
 
         if (contactSection) {
           const contactRect = contactSection.getBoundingClientRect();
-          if (contactRect.top < window.innerHeight / 2) {
+          const contactTop = contactRect.top + scrollPosition;
+
+          if (scrollPosition + window.innerHeight * 0.5 >= contactTop) {
             setActiveSection('Kontakt');
-            return;
+          } else {
+            setActiveSection('Home');
           }
+        } else {
+          setActiveSection('Home');
         }
+      };
 
-        setActiveSection('Home');
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      handleScroll();
+      return () => window.removeEventListener('scroll', handleScroll);
+    } else {
+      setActiveSection('Home');
+    }
   }, [location.pathname]);
 
   const scrollToContact = () => {
