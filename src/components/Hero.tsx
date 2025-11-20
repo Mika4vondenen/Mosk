@@ -53,7 +53,7 @@ export default function Hero() {
         </p>
 
         <InteractiveHoverButton
-          text="Jetzt Beratung anfragen"
+          text="Starten"
           onClick={scrollToContact}
         />
       </div>
