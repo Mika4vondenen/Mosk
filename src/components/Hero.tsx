@@ -1,5 +1,5 @@
-import { ArrowRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { InteractiveHoverButton } from './ui/interactive-hover-button';
 
 export default function Hero() {
   const images = [
@@ -21,7 +21,10 @@ export default function Hero() {
   const scrollToContact = () => {
     const element = document.getElementById('contact');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const navHeight = 120;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - navHeight;
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
     }
   };
 
@@ -49,13 +52,10 @@ export default function Hero() {
           Wir verwandeln Ihre Vision in visuelle Meisterwerke. Für Privatkunden und Unternehmen in ganz Deutschland.
         </p>
 
-        <button
+        <InteractiveHoverButton
+          text="Jetzt Beratung anfragen"
           onClick={scrollToContact}
-          className="group inline-flex items-center gap-3 bg-[#F5B700] text-[#0A1F44] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#ffc61a] transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl"
-        >
-          Jetzt Beratung anfragen
-          <ArrowRight className="group-hover:translate-x-1 transition-transform duration-300" size={20} />
-        </button>
+        />
       </div>
     </section>
   );
