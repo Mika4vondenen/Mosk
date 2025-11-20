@@ -24,3 +24,12 @@
     scroll-behavior: smooth;
   }
 }
+
+footer {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+footer * {
+  color: inherit;
+}
