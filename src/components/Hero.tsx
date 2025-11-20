@@ -1,6 +1,23 @@
 import { ArrowRight } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 export default function Hero() {
+  const images = [
+    '/assets/7712852b-57ac-4f22-9a81-746b91133441.png',
+    '/assets/982564cf-d447-492e-a99f-f592f3f4d981.png',
+    '/assets/f61c5e57-a3c5-4a50-99e0-637f33fef76b.png',
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const scrollToContact = () => {
     const element = document.getElementById('contact');
     if (element) {
@@ -10,7 +27,10 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0A1F44] via-[#0d2a5c] to-[#0A1F44] pt-20">
-      <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/1470171/pexels-photo-1470171.jpeg')] bg-cover bg-center opacity-80"></div>
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-80 transition-all duration-1000"
+        style={{ backgroundImage: `url('${images[currentImageIndex]}')` }}
+      ></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
