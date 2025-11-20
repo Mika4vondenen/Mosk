@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 
 export default function Hero() {
   const images = [
-    '/assets/7712852b-57ac-4f22-9a81-746b91133441.png',
     '/assets/982564cf-d447-492e-a99f-f592f3f4d981.png',
     '/assets/f61c5e57-a3c5-4a50-99e0-637f33fef76b.png',
   ];
