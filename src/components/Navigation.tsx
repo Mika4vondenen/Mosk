@@ -64,7 +64,7 @@ export default function Navigation() {
   };
 
   const navItems = [
-    { name: 'Home', icon: Home, onClick: () => goToHome() },
+    { name: 'Home', image: '/assets/ChatGPT Image 20. Nov. 2025, 22_43_05.png', onClick: () => goToHome() },
     { name: 'Leistungen', icon: Zap, onClick: () => navigate('/services') },
     { name: 'Über uns', icon: Info, onClick: () => navigate('/about') },
     { name: 'Portfolio', icon: Image, onClick: () => navigate('/portfolio') },
