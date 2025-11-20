@@ -17,8 +17,8 @@ export default function Navigation() {
   ]
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 pt-4 px-4">
-      <div className="flex justify-between items-start">
+    <div className="fixed top-0 left-0 right-0 z-50 bg-black py-4 px-4">
+      <div className="flex justify-between items-start max-w-7xl mx-auto">
         <img
           src="/ChatGPT Image 20. Nov. 2025, 13_15_32.png"
           alt="edit by mosk"

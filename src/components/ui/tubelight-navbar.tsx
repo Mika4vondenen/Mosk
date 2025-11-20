@@ -29,12 +29,7 @@ export function NavBar({ items, className }: NavBarProps) {
   }, [])
 
   return (
-    <div
-      className={cn(
-        "fixed top-0 left-1/2 -translate-x-1/2 z-50 pt-6",
-        className,
-      )}
-    >
+    <div className={cn(className)}>
       <div className="flex items-center gap-3 bg-black/80 border border-white/10 backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
         {items.map((item) => {
           const Icon = item.icon
