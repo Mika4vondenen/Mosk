@@ -17,9 +17,8 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex-shrink-0">
-            <div className="text-white font-bold text-xl">
-              <span className="block leading-tight">edit by</span>
-              <span className="block italic font-script">mosk</span>
+            <div className="text-white font-bold text-xl" style={{ fontFamily: 'cursive' }}>
+              edit by mosk
             </div>
           </div>
 
