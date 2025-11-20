@@ -52,7 +52,7 @@ export default function Hero() {
 
         <BlurFade delay={0.5} inView>
           <p className="text-xl md:text-2xl text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Wir verwandeln Ihre Vision in visuelle Meisterwerke. Für Privatkunden und Unternehmen in ganz Deutschland.
+            Wir verwandeln Ihre Vision in visuelle Meisterwerke. Fuer Privatkunden und Unternehmen in ganz Deutschland.
           </p>
         </BlurFade>
 
