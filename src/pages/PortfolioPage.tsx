@@ -66,7 +66,10 @@ export default function PortfolioPage() {
     setTimeout(() => {
       const element = document.getElementById('contact');
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        const navHeight = 120;
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - navHeight;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
       }
     }, 100);
   };

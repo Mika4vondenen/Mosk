@@ -57,7 +57,10 @@ export default function Navigation() {
         const element = document.getElementById('contact');
         if (element) {
           isScrollingRef.current = true;
-          element.scrollIntoView({ behavior: 'smooth' });
+          const navHeight = 120;
+          const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+          const offsetPosition = elementPosition - navHeight;
+          window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
           setTimeout(() => { isScrollingRef.current = false; }, 1000);
         }
       }, 100);
@@ -65,7 +68,10 @@ export default function Navigation() {
       const element = document.getElementById('contact');
       if (element) {
         isScrollingRef.current = true;
-        element.scrollIntoView({ behavior: 'smooth' });
+        const navHeight = 120;
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - navHeight;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
         setTimeout(() => { isScrollingRef.current = false; }, 1000);
       }
     }
