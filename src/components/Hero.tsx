@@ -3,10 +3,10 @@ import { useState, useEffect } from 'react';
 
 export default function Hero() {
   const images = [
-    '/assets/982564cf-d447-492e-a99f-f592f3f4d981.png',
-    '/assets/f61c5e57-a3c5-4a50-99e0-637f33fef76b.png',
-    '/assets/1d26fb92-f725-4f82-8838-d35c9c7fe8b1.png',
-    '/assets/616af8f7-a773-49b6-8063-f2d528ebd120.png',
+    'https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg',
+    'https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg',
+    'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg',
+    'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg',
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
