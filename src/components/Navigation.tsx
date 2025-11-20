@@ -18,7 +18,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-20">
           <div className="flex-shrink-0">
             <img
-              src="/image.png"
+              src="/ChatGPT Image 20. Nov. 2025, 13_15_32.png"
               alt="edit by mosk"
               className="h-12 w-auto"
             />
