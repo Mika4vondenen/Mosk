@@ -10,7 +10,7 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0A1F44] via-[#0d2a5c] to-[#0A1F44] pt-20">
-      <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/2777898/pexels-photo-2777898.jpeg')] bg-cover bg-center opacity-10"></div>
+      <div className="absolute inset-0 bg-[url('/image\\ copy\\ copy\\ copy.png')] bg-cover bg-center opacity-90"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
