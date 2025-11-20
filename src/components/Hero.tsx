@@ -46,7 +46,7 @@ export default function Hero() {
         <BlurFade delay={0.25} inView>
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: "'Bebas Neue', sans-serif", fontWeight: 400 }}>
             STARKE FOTOS. STARKE VIDEOS. STARKES EDITING.<br />
-            <span className="text-[#F5B700]">ALLES AUS EINER HAND.</span>
+            <span className="text-[#f59e0b]">ALLES AUS EINER HAND.</span>
           </h1>
         </BlurFade>
 
