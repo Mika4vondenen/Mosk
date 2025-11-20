@@ -59,6 +59,7 @@ export default function Navigation() {
   };
 
   const goToHome = () => {
+    setActiveSection('Home');
     navigate('/');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
