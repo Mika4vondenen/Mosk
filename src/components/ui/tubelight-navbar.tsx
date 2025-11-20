@@ -47,6 +47,7 @@ export function NavBar({ items, className, activeSection }: NavBarProps) {
             <button
               key={item.name}
               onClick={() => {
+                setActiveTab(item.name)
                 item.onClick?.()
               }}
               className={cn(
