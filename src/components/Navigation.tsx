@@ -17,7 +17,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-[#0A1F44]">Edit by Mosk</h1>
+            <img src="/image copy.png" alt="Edit by Mosk" className="h-12" />
           </div>
 
           <div className="hidden md:flex space-x-8">
