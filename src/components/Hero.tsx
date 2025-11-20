@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { InteractiveHoverButton } from './ui/interactive-hover-button';
+import { BlurFade } from './ui/blur-fade';
 
 export default function Hero() {
   const images = [
@@ -42,19 +43,25 @@ export default function Hero() {
       ))}
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-          Starke Fotos, starke Videos, starkes Editing.<br />
-          <span className="text-[#F5B700]">Alles aus einer Hand.</span>
-        </h1>
+        <BlurFade delay={0.25} inView>
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+            Starke Fotos, starke Videos, starkes Editing.<br />
+            <span className="text-[#F5B700]">Alles aus einer Hand.</span>
+          </h1>
+        </BlurFade>
 
-        <p className="text-xl md:text-2xl text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed">
-          Wir verwandeln Ihre Vision in visuelle Meisterwerke. Für Privatkunden und Unternehmen in ganz Deutschland.
-        </p>
+        <BlurFade delay={0.5} inView>
+          <p className="text-xl md:text-2xl text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed">
+            Wir verwandeln Ihre Vision in visuelle Meisterwerke. Für Privatkunden und Unternehmen in ganz Deutschland.
+          </p>
+        </BlurFade>
 
-        <InteractiveHoverButton
-          text="Starten"
-          onClick={scrollToContact}
-        />
+        <BlurFade delay={0.75} inView>
+          <InteractiveHoverButton
+            text="Starten"
+            onClick={scrollToContact}
+          />
+        </BlurFade>
       </div>
     </section>
   );
