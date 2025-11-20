@@ -23,6 +23,11 @@ export default function Navigation() {
     }
   };
 
+  const goToHome = () => {
+    navigate('/');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const navItems = [
     { name: 'Leistungen', icon: Zap, onClick: () => navigate('/services') },
     { name: 'Über uns', icon: Info, onClick: () => navigate('/about') },
@@ -34,7 +39,7 @@ export default function Navigation() {
     <div className="fixed top-0 left-0 right-0 z-50 bg-black py-4 px-4">
       <div className="flex justify-between items-start max-w-7xl mx-auto">
         <button
-          onClick={() => navigate('/')}
+          onClick={goToHome}
           className="hover:opacity-80 transition-opacity duration-300"
         >
           <img
