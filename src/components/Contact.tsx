@@ -51,7 +51,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-[#171717] text-white focus:border-[#F5B700] focus:ring-2 focus:ring-[#F5B700] focus:ring-opacity-50 transition-all duration-300 outline-none placeholder-gray-400"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-[#171717] text-white focus:border-[#f59e0b] focus:ring-2 focus:ring-[#f59e0b] focus:ring-opacity-50 transition-all duration-300 outline-none placeholder-gray-400"
                   placeholder="Ihr Name"
                 />
               </div>
@@ -67,7 +67,7 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-[#171717] text-white focus:border-[#F5B700] focus:ring-2 focus:ring-[#F5B700] focus:ring-opacity-50 transition-all duration-300 outline-none placeholder-gray-400"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-[#171717] text-white focus:border-[#f59e0b] focus:ring-2 focus:ring-[#f59e0b] focus:ring-opacity-50 transition-all duration-300 outline-none placeholder-gray-400"
                   placeholder="ihre@email.de"
                 />
               </div>
@@ -82,7 +82,7 @@ export default function Contact() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-[#171717] text-white focus:border-[#F5B700] focus:ring-2 focus:ring-[#F5B700] focus:ring-opacity-50 transition-all duration-300 outline-none placeholder-gray-400"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-[#171717] text-white focus:border-[#f59e0b] focus:ring-2 focus:ring-[#f59e0b] focus:ring-opacity-50 transition-all duration-300 outline-none placeholder-gray-400"
                   placeholder="Optional"
                 />
               </div>
@@ -98,14 +98,14 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-[#171717] text-white focus:border-[#F5B700] focus:ring-2 focus:ring-[#F5B700] focus:ring-opacity-50 transition-all duration-300 outline-none resize-none placeholder-gray-400"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-[#171717] text-white focus:border-[#f59e0b] focus:ring-2 focus:ring-[#f59e0b] focus:ring-opacity-50 transition-all duration-300 outline-none resize-none placeholder-gray-400"
                   placeholder="Beschreiben Sie Ihr Projekt..."
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="group w-full bg-[#F5B700] text-black px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#ffc61a] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-3"
+                className="group w-full bg-[#f59e0b] text-black px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#ffc61a] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-3"
               >
                 Nachricht senden
                 <Send className="group-hover:translate-x-1 transition-transform duration-300" size={20} />
@@ -120,38 +120,38 @@ export default function Contact() {
 
             <div className="space-y-6 mb-12">
               <div className="flex items-start gap-4">
-                <div className="bg-[#F5B700] w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="bg-[#f59e0b] w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Mail className="text-[#0A1F44]" size={24} />
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-300 mb-1">E-Mail</h4>
-                  <a href="mailto:info@editbymosk.de" className="text-gray-400 hover:text-[#F5B700] transition-colors duration-300">
-                    info@editbymosk.de
+                  <a href="mailto:d.mamon@moskunlimited.be" className="text-gray-400 hover:text-[#f59e0b] transition-colors duration-300">
+                    d.mamon@moskunlimited.be
                   </a>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="bg-[#F5B700] w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="bg-[#f59e0b] w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Phone className="text-[#0A1F44]" size={24} />
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-300 mb-1">Telefon</h4>
-                  <a href="tel:+49123456789" className="text-gray-400 hover:text-[#F5B700] transition-colors duration-300">
-                    +49 (0) 123 456 789
+                  <a href="tel:+49176476972299" className="text-gray-400 hover:text-[#f59e0b] transition-colors duration-300">
+                    (+49) 0176 4769 7299
                   </a>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="bg-[#F5B700] w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="bg-[#f59e0b] w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
                   <MapPin className="text-[#0A1F44]" size={24} />
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-300 mb-1">Standort</h4>
                   <p className="text-gray-400">
-                    Deutschlandweiter Service<br />
-                    Hauptsitz: Deutschland
+                    BELGIEN<br />
+                    Weissenbrücke 2. 4770 Amel
                   </p>
                 </div>
               </div>
