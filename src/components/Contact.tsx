@@ -22,26 +22,26 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-white">
+    <section id="contact" className="py-24 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0A1F44] mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#4A8FD8] mb-4">
             Kontakt aufnehmen
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             Lassen Sie uns über Ihr Projekt sprechen. Wir freuen uns auf Ihre Anfrage!
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
-            <h3 className="text-2xl font-bold text-[#0A1F44] mb-8">
+            <h3 className="text-2xl font-bold text-[#4A8FD8] mb-8">
               Schreiben Sie uns
             </h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-semibold text-[#0A1F44] mb-2">
+                <label htmlFor="name" className="block text-sm font-semibold text-gray-300 mb-2">
                   Name *
                 </label>
                 <input
@@ -57,7 +57,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-[#0A1F44] mb-2">
+                <label htmlFor="email" className="block text-sm font-semibold text-gray-300 mb-2">
                   E-Mail *
                 </label>
                 <input
@@ -73,7 +73,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="phone" className="block text-sm font-semibold text-[#0A1F44] mb-2">
+                <label htmlFor="phone" className="block text-sm font-semibold text-gray-300 mb-2">
                   Telefon
                 </label>
                 <input
@@ -88,7 +88,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-[#0A1F44] mb-2">
+                <label htmlFor="message" className="block text-sm font-semibold text-gray-300 mb-2">
                   Nachricht *
                 </label>
                 <textarea
@@ -105,7 +105,7 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="group w-full bg-[#F5B700] text-[#0A1F44] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#ffc61a] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-3"
+                className="group w-full bg-[#F5B700] text-black px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#ffc61a] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-3"
               >
                 Nachricht senden
                 <Send className="group-hover:translate-x-1 transition-transform duration-300" size={20} />
@@ -114,7 +114,7 @@ export default function Contact() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-bold text-[#0A1F44] mb-8">
+            <h3 className="text-2xl font-bold text-[#4A8FD8] mb-8">
               Kontaktinformationen
             </h3>
 
@@ -124,8 +124,8 @@ export default function Contact() {
                   <Mail className="text-[#0A1F44]" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#0A1F44] mb-1">E-Mail</h4>
-                  <a href="mailto:info@editbymosk.de" className="text-gray-600 hover:text-[#F5B700] transition-colors duration-300">
+                  <h4 className="font-semibold text-gray-300 mb-1">E-Mail</h4>
+                  <a href="mailto:info@editbymosk.de" className="text-gray-400 hover:text-[#F5B700] transition-colors duration-300">
                     info@editbymosk.de
                   </a>
                 </div>
@@ -136,8 +136,8 @@ export default function Contact() {
                   <Phone className="text-[#0A1F44]" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#0A1F44] mb-1">Telefon</h4>
-                  <a href="tel:+49123456789" className="text-gray-600 hover:text-[#F5B700] transition-colors duration-300">
+                  <h4 className="font-semibold text-gray-300 mb-1">Telefon</h4>
+                  <a href="tel:+49123456789" className="text-gray-400 hover:text-[#F5B700] transition-colors duration-300">
                     +49 (0) 123 456 789
                   </a>
                 </div>
@@ -148,8 +148,8 @@ export default function Contact() {
                   <MapPin className="text-[#0A1F44]" size={24} />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#0A1F44] mb-1">Standort</h4>
-                  <p className="text-gray-600">
+                  <h4 className="font-semibold text-gray-300 mb-1">Standort</h4>
+                  <p className="text-gray-400">
                     Deutschlandweiter Service<br />
                     Hauptsitz: Deutschland
                   </p>
