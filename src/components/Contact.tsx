@@ -25,7 +25,7 @@ export default function Contact() {
     <section id="contact" className="py-24 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#4A8FD8] mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#f59e0b] mb-4">
             Kontakt aufnehmen
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
@@ -35,7 +35,7 @@ export default function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
-            <h3 className="text-2xl font-bold text-[#4A8FD8] mb-8">
+            <h3 className="text-2xl font-bold text-[#f59e0b] mb-8">
               Schreiben Sie uns
             </h3>
 
@@ -114,7 +114,7 @@ export default function Contact() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-bold text-[#4A8FD8] mb-8">
+            <h3 className="text-2xl font-bold text-[#f59e0b] mb-8">
               Kontaktinformationen
             </h3>
 
