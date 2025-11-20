@@ -43,9 +43,8 @@ export default function Hero() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-          Professionelle<br />
-          <span className="text-[#F5B700]">Foto-, Video- & Editing-</span><br />
-          Dienstleistungen
+          Starke Fotos, starke Videos, starkes Editing.<br />
+          <span className="text-[#F5B700]">Alles aus einer Hand.</span>
         </h1>
 
         <p className="text-xl md:text-2xl text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed">
