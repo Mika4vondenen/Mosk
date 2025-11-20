@@ -157,7 +157,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="bg-[#D97C0B] p-8 rounded-xl">
+            <div className="bg-black p-8 rounded-xl">
               <h4 className="text-2xl font-bold text-white mb-4">
                 Starten wir Ihr Projekt.
               </h4>
