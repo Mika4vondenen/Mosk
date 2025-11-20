@@ -17,7 +17,6 @@ interface NavBarProps {
 export function NavBar({ items, className }: NavBarProps) {
   const [activeTab, setActiveTab] = useState(items[0].name)
   const [isMobile, setIsMobile] = useState(false)
-  const [isAnimating, setIsAnimating] = useState(false)
 
   useEffect(() => {
     const handleResize = () => {
@@ -40,14 +39,8 @@ export function NavBar({ items, className }: NavBarProps) {
             <button
               key={item.name}
               onClick={() => {
-                if (!isAnimating) {
-                  setIsAnimating(true)
-                  setActiveTab(item.name)
-                  setTimeout(() => {
-                    item.onClick?.()
-                    setTimeout(() => setIsAnimating(false), 50)
-                  }, 150)
-                }
+                setActiveTab(item.name)
+                item.onClick?.()
               }}
               className={cn(
                 "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-all",
@@ -61,15 +54,16 @@ export function NavBar({ items, className }: NavBarProps) {
               </span>
               {isActive && (
                 <motion.div
-                  layoutId="lamp"
                   className="absolute inset-0 w-full bg-white/5 rounded-full -z-10"
-                  initial={false}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
                   transition={{
                     type: "spring",
-                    stiffness: 400,
-                    damping: 35,
+                    stiffness: 300,
+                    damping: 30,
+                    duration: 0.3,
                   }}
-                  layout
                 >
                   <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-white rounded-t-full">
                     <div className="absolute w-12 h-6 bg-white/10 rounded-full blur-md -top-2 -left-2" />
