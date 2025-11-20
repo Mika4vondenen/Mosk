@@ -11,10 +11,14 @@ export default function Hero() {
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [nextImageIndex, setNextImageIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % images.length);
+      setNextImageIndex((prev) => (prev + 1) % images.length);
+      setTimeout(() => {
+        setCurrentImageIndex((prev) => (prev + 1) % images.length);
+      }, 500);
     }, 5000);
 
     return () => clearInterval(interval);
@@ -30,7 +34,11 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0A1F44] via-[#0d2a5c] to-[#0A1F44] pt-20">
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-80 transition-all duration-1000"
+        className="absolute inset-0 bg-cover bg-center opacity-80 transition-all duration-500"
+        style={{ backgroundImage: `url('${images[nextImageIndex]}')` }}
+      ></div>
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-80 transition-all duration-500"
         style={{ backgroundImage: `url('${images[currentImageIndex]}')` }}
       ></div>
 
