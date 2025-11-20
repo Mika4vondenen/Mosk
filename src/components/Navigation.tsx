@@ -20,7 +20,7 @@ export default function Navigation() {
             <img
               src="/ChatGPT Image 20. Nov. 2025, 13_15_32.png"
               alt="edit by mosk"
-              className="h-12 w-auto"
+              className="h-20 w-auto"
             />
           </div>
 
