@@ -1,10 +1,40 @@
 import { Zap, Info, Image, Mail } from 'lucide-react';
 import { NavBar } from './ui/tubelight-navbar';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 export default function Navigation() {
   const navigate = useNavigate();
   const location = useLocation();
+  const [activeSection, setActiveSection] = useState('');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const contactSection = document.getElementById('contact');
+
+      if (contactSection) {
+        const contactRect = contactSection.getBoundingClientRect();
+        if (contactRect.top < window.innerHeight / 2) {
+          setActiveSection('Kontakt');
+          return;
+        }
+      }
+
+      if (location.pathname === '/services') {
+        setActiveSection('Leistungen');
+      } else if (location.pathname === '/about') {
+        setActiveSection('Über uns');
+      } else if (location.pathname === '/portfolio') {
+        setActiveSection('Portfolio');
+      } else {
+        setActiveSection('');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [location.pathname]);
 
   const scrollToContact = () => {
     if (location.pathname !== '/') {
@@ -48,7 +78,7 @@ export default function Navigation() {
             className="h-20 w-auto"
           />
         </button>
-        <NavBar items={navItems} />
+        <NavBar items={navItems} activeSection={activeSection} />
       </div>
     </div>
   );

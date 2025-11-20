@@ -12,9 +12,10 @@ interface NavItem {
 interface NavBarProps {
   items: NavItem[]
   className?: string
+  activeSection?: string
 }
 
-export function NavBar({ items, className }: NavBarProps) {
+export function NavBar({ items, className, activeSection }: NavBarProps) {
   const [activeTab, setActiveTab] = useState(items[0].name)
   const [isMobile, setIsMobile] = useState(false)
 
@@ -27,6 +28,12 @@ export function NavBar({ items, className }: NavBarProps) {
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
   }, [])
+
+  useEffect(() => {
+    if (activeSection) {
+      setActiveTab(activeSection)
+    }
+  }, [activeSection])
 
   return (
     <div className={cn(className)}>
