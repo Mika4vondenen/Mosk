@@ -54,7 +54,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#about" className="text-gray-300 hover:text-[#F5B700] transition-colors duration-300">
-                  Über uns
+                  Über mich
                 </a>
               </li>
               <li>
