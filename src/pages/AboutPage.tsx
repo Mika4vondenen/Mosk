@@ -136,44 +136,6 @@ export default function AboutPage() {
 
   return (
     <div className="pt-32">
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h1 className="text-5xl md:text-6xl font-bold text-[#0A1F44] mb-8">
-                Über Edit by Mosk
-              </h1>
-
-              <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
-                <p>
-                  Seit über 10 Jahren steht Edit by Mosk für erstklassige visuelle Dienstleistungen in Deutschland. Wir verbinden technisches Know-how mit kreativer Leidenschaft, um für unsere Kunden einzigartige Ergebnisse zu erzielen.
-                </p>
-
-                <p>
-                  Ob Produktfotografie für den E-Commerce, Imagefilme für Ihr Unternehmen oder professionelles Editing – unser erfahrenes Team setzt Ihre Visionen mit höchster Qualität um.
-                </p>
-
-                <p>
-                  Wir arbeiten mit modernster Technik und verfolgen stets die neuesten Trends der Branche. Dabei steht für uns die persönliche Betreuung und Zufriedenheit unserer Kunden an erster Stelle.
-                </p>
-
-                <p>
-                  Mit jedem Projekt streben wir danach, Ihre Erwartungen zu übertreffen und langfristige Partnerschaften aufzubauen. Unser Engagement für Exzellenz hat uns zu einem vertrauten Partner für Unternehmen aller Größen gemacht.
-                </p>
-              </div>
-
-              <button
-                onClick={scrollToContact}
-                className="mt-10 group inline-flex items-center gap-3 bg-[#F5B700] text-[#0A1F44] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#ffc61a] transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl"
-              >
-                Jetzt Beratung anfragen
-                <ArrowRight className="group-hover:translate-x-1 transition-transform duration-300" size={20} />
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="bg-white">
         <Timeline data={timelineData} />
       </section>
