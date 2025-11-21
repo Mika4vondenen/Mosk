@@ -60,37 +60,6 @@ export default function AboutPage() {
       <section className="bg-black">
         <Timeline data={timelineData} />
       </section>
-
-      <section className="py-24 bg-gradient-to-br from-[#0A1F44] to-[#0d2a5c]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-16 text-center">
-            Unsere Werte
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="bg-white/10 backdrop-blur p-8 rounded-xl border border-white/20">
-              <h3 className="text-2xl font-bold text-[#F5B700] mb-4">Qualität</h3>
-              <p className="text-gray-200">
-                Wir kompromittieren nie bei der Qualität. Jedes Projekt erhält unsere volle Aufmerksamkeit und Expertise.
-              </p>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur p-8 rounded-xl border border-white/20">
-              <h3 className="text-2xl font-bold text-[#F5B700] mb-4">Kreativität</h3>
-              <p className="text-gray-200">
-                Kreative Lösungen sind das Herzstück unserer Arbeit. Wir denken über den Tellerrand hinaus.
-              </p>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur p-8 rounded-xl border border-white/20">
-              <h3 className="text-2xl font-bold text-[#F5B700] mb-4">Partnerschaft</h3>
-              <p className="text-gray-200">
-                Wir sehen uns als Partner unserer Kunden, nicht nur als Dienstleister. Ihr Erfolg ist unser Erfolg.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
