@@ -63,10 +63,6 @@ export default function ServicesPage() {
                 key={index}
                 className="group text-center"
               >
-                <div className="bg-gradient-to-br from-[#F5B700] to-[#ffc61a] w-20 h-20 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 mx-auto">
-                  <service.icon className="text-[#0A1F44]" size={36} />
-                </div>
-
                 <h3 className="text-xl font-bold text-gray-300">
                   {service.title}
                 </h3>
