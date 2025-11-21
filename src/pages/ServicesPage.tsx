@@ -57,6 +57,14 @@ export default function ServicesPage() {
             </p>
           </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div className="bg-gradient-to-br from-[#111111] to-[#181818] p-12 rounded-xl">
+            </div>
+            <div className="bg-gradient-to-br from-[#111111] to-[#181818] p-12 rounded-xl">
+            </div>
+            <div className="bg-gradient-to-br from-[#111111] to-[#181818] p-12 rounded-xl">
+            </div>
+          </div>
 
           <div className="bg-gradient-to-br from-[#0A1F44] to-[#0d2a5c] p-12 rounded-xl text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
