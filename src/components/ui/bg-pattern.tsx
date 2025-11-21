@@ -65,7 +65,7 @@ const BGPattern = ({
 
 	return (
 		<div
-			className={cn('absolute inset-0 z-[-10] size-full', maskClasses[mask], className)}
+			className={cn('absolute inset-0 z-0 size-full pointer-events-none', maskClasses[mask], className)}
 			style={{
 				backgroundImage,
 				backgroundSize: bgSize,
