@@ -52,3 +52,21 @@ footer {
 footer * {
   color: inherit;
 }
+
+.service-box {
+  transition: background-color 0.275s ease, transform 0.275s ease;
+}
+
+.service-box:hover {
+  background: linear-gradient(to bottom right, #242424, #1c1c1c);
+}
+
+.service-box:hover .service-icon {
+  transform: scale(1.05);
+  transition: transform 0.275s ease;
+}
+
+.service-box:hover .service-title {
+  color: #F9D648;
+  transition: color 0.275s ease;
+}
