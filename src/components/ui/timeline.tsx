@@ -96,7 +96,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div
-      className="w-full bg-black font-sans md:px-10 relative overflow-hidden -mt-8"
+      className="w-full font-sans md:px-10 relative overflow-hidden -mt-8"
+      style={{ backgroundColor: '#262626' }}
       ref={containerRef}
     >
       <BGPattern variant="grid" mask="fade-edges" fill="rgba(209, 213, 219, 0.15)" size={60} />
