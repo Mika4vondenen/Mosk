@@ -11,6 +11,69 @@ interface TimelineEntry {
   content: React.ReactNode;
 }
 
+const TimelineItem = ({ item, index, totalItems }: { item: TimelineEntry; index: number; totalItems: number }) => {
+  const itemRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: itemRef,
+    offset: ["start center", "end center"],
+  });
+
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.5, 1]);
+  const backgroundColor = useTransform(
+    scrollYProgress,
+    [0, 0.5, 1],
+    ["rgb(38, 38, 38)", "rgb(245, 183, 0)", "rgb(38, 38, 38)"]
+  );
+  const borderColor = useTransform(
+    scrollYProgress,
+    [0, 0.5, 1],
+    ["rgb(64, 64, 64)", "rgb(255, 198, 26)", "rgb(64, 64, 64)"]
+  );
+  const boxShadow = useTransform(
+    scrollYProgress,
+    [0, 0.5, 1],
+    [
+      "0 0 0px rgba(245, 183, 0, 0)",
+      "0 0 20px rgba(245, 183, 0, 0.8), 0 0 40px rgba(245, 183, 0, 0.4)",
+      "0 0 0px rgba(245, 183, 0, 0)"
+    ]
+  );
+
+  return (
+    <div
+      ref={itemRef}
+      className="flex justify-start pt-10 md:pt-40 md:gap-10"
+    >
+      <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
+        <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-black flex items-center justify-center">
+          <motion.div
+            className="h-4 w-4 rounded-full p-2"
+            style={{
+              scale,
+              backgroundColor,
+              borderWidth: '1px',
+              borderStyle: 'solid',
+              borderColor,
+              boxShadow
+            }}
+          />
+        </div>
+        <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-neutral-400">
+          {item.title}
+        </h3>
+      </div>
+
+      <div className="relative pl-20 pr-4 md:pl-4 w-full">
+        <h3 className="md:hidden block text-2xl mb-4 text-left font-bold text-neutral-400">
+          {item.title}
+        </h3>
+        {item.content}{" "}
+      </div>
+    </div>
+  );
+};
+
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const ref = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -45,26 +108,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20 z-20">
         {data.map((item, index) => (
-          <div
-            key={index}
-            className="flex justify-start pt-10 md:pt-40 md:gap-10"
-          >
-            <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
-              <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-black flex items-center justify-center">
-                <div className="h-4 w-4 rounded-full bg-neutral-800 border border-neutral-700 p-2" />
-              </div>
-              <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-neutral-400">
-                {item.title}
-              </h3>
-            </div>
-
-            <div className="relative pl-20 pr-4 md:pl-4 w-full">
-              <h3 className="md:hidden block text-2xl mb-4 text-left font-bold text-neutral-400">
-                {item.title}
-              </h3>
-              {item.content}{" "}
-            </div>
-          </div>
+          <TimelineItem key={index} item={item} index={index} totalItems={data.length} />
         ))}
         <div
           style={{
