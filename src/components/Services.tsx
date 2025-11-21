@@ -41,13 +41,13 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 bg-[#F4F6F8]">
+    <section id="services" className="py-24" style={{ backgroundColor: '#262626' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0A1F44] mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Unsere Leistungen
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Von der ersten Idee bis zum fertigen Projekt – wir begleiten Sie mit Professionalität und Leidenschaft.
           </p>
         </div>
@@ -62,17 +62,17 @@ export default function Services() {
                 <service.icon className="text-[#0A1F44]" size={32} />
               </div>
 
-              <h3 className="text-2xl font-bold text-[#0A1F44] mb-3">
+              <h3 className="text-2xl font-bold text-white mb-3">
                 {service.title}
               </h3>
 
-              <p className="text-gray-600 mb-4 leading-relaxed">
+              <p className="text-gray-300 mb-4 leading-relaxed">
                 {service.description}
               </p>
 
               <ul className="space-y-2">
                 {service.features.map((feature, idx) => (
-                  <li key={idx} className="text-sm text-gray-500 flex items-center">
+                  <li key={idx} className="text-sm text-gray-400 flex items-center">
                     <span className="w-1.5 h-1.5 bg-[#F5B700] rounded-full mr-2"></span>
                     {feature}
                   </li>
