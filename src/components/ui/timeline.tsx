@@ -37,7 +37,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       ref={containerRef}
     >
       <BGPattern variant="grid" mask="fade-edges" fill="rgba(209, 213, 219, 0.15)" size={60} />
-      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white dark:from-neutral-950 via-white dark:via-neutral-950 to-transparent z-10 pointer-events-none" />
       <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10 relative z-20">
         <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
           Unsere Geschichte
