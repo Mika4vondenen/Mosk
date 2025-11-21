@@ -162,18 +162,6 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="mt-10 flex flex-wrap gap-4">
-                <div className="bg-[#F4F6F8] px-6 py-3 rounded-lg">
-                  <p className="text-[#0A1F44] font-semibold">Deutschlandweiter Service</p>
-                </div>
-                <div className="bg-[#F4F6F8] px-6 py-3 rounded-lg">
-                  <p className="text-[#0A1F44] font-semibold">Faire Preise</p>
-                </div>
-                <div className="bg-[#F4F6F8] px-6 py-3 rounded-lg">
-                  <p className="text-[#0A1F44] font-semibold">Schnelle Lieferung</p>
-                </div>
-              </div>
-
               <button
                 onClick={scrollToContact}
                 className="mt-10 group inline-flex items-center gap-3 bg-[#F5B700] text-[#0A1F44] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#ffc61a] transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl"
@@ -181,21 +169,6 @@ export default function AboutPage() {
                 Jetzt Beratung anfragen
                 <ArrowRight className="group-hover:translate-x-1 transition-transform duration-300" size={20} />
               </button>
-            </div>
-
-            <div className="grid grid-cols-2 gap-6">
-              {stats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="bg-gradient-to-br from-[#0A1F44] to-[#0d2a5c] p-8 rounded-xl text-center transform hover:scale-105 transition-transform duration-300"
-                >
-                  <div className="flex justify-center mb-4">
-                    <stat.icon className="text-[#F5B700]" size={40} />
-                  </div>
-                  <p className="text-4xl font-bold text-white mb-2">{stat.value}</p>
-                  <p className="text-gray-300 text-sm">{stat.label}</p>
-                </div>
-              ))}
             </div>
           </div>
         </div>
