@@ -52,22 +52,6 @@ export default function AboutPage() {
               ✅ Entwicklung unserer Qualitätsstandards
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            <img
-              src="https://images.pexels.com/photos/2228571/pexels-photo-2228571.jpeg"
-              alt="konzert"
-              loading="eager"
-              decoding="async"
-              className={imageClass}
-            />
-            <img
-              src="https://images.pexels.com/photos/1166428/pexels-photo-1166428.jpeg"
-              alt="anfänge"
-              loading="eager"
-              decoding="async"
-              className={imageClass}
-            />
-          </div>
         </div>
       ),
     },
@@ -81,36 +65,6 @@ export default function AboutPage() {
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             Über 300 erfolgreiche Projekte mit Kunden aus verschiedensten Branchen - von kleinen Start-ups bis zu etablierten Großunternehmen.
           </p>
-          <div className="grid grid-cols-2 gap-4">
-            <img
-              src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg"
-              alt="post production"
-              loading="eager"
-              decoding="async"
-              className={imageClass}
-            />
-            <img
-              src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg"
-              alt="architektur"
-              loading="eager"
-              decoding="async"
-              className={imageClass}
-            />
-            <img
-              src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg"
-              alt="fashion"
-              loading="eager"
-              decoding="async"
-              className={imageClass}
-            />
-            <img
-              src="https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg"
-              alt="social media"
-              loading="eager"
-              decoding="async"
-              className={imageClass}
-            />
-          </div>
         </div>
       ),
     },
@@ -121,36 +75,6 @@ export default function AboutPage() {
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
             Expansion unserer Services und Integration modernster KI-gestützter Bearbeitungstechnologien. Lancierung neuer Express-Services für noch schnellere Projektabwicklung.
           </p>
-          <div className="grid grid-cols-2 gap-4">
-            <img
-              src="https://images.pexels.com/photos/1166428/pexels-photo-1166428.jpeg"
-              alt="produktfotografie"
-              loading="eager"
-              decoding="async"
-              className={imageClass}
-            />
-            <img
-              src="https://images.pexels.com/photos/3784221/pexels-photo-3784221.jpeg"
-              alt="videoproduktion"
-              loading="eager"
-              decoding="async"
-              className={imageClass}
-            />
-            <img
-              src="https://images.pexels.com/photos/1058277/pexels-photo-1058277.jpeg"
-              alt="event coverage"
-              loading="eager"
-              decoding="async"
-              className={imageClass}
-            />
-            <img
-              src="https://images.pexels.com/photos/1797428/pexels-photo-1797428.jpeg"
-              alt="business portraits"
-              loading="eager"
-              decoding="async"
-              className={imageClass}
-            />
-          </div>
         </div>
       ),
     },
