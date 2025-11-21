@@ -25,6 +25,8 @@ export default function AboutPage() {
     }, 100);
   };
 
+  const imageClass = "rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]";
+
   const timelineData = [
     {
       title: "2025",
@@ -37,29 +39,37 @@ export default function AboutPage() {
             <img
               src="https://images.pexels.com/photos/1166428/pexels-photo-1166428.jpeg"
               alt="produktfotografie"
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              loading="eager"
+              decoding="async"
+              className={imageClass}
             />
             <img
               src="https://images.pexels.com/photos/3784221/pexels-photo-3784221.jpeg"
               alt="videoproduktion"
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              loading="eager"
+              decoding="async"
+              className={imageClass}
             />
             <img
               src="https://images.pexels.com/photos/1058277/pexels-photo-1058277.jpeg"
               alt="event coverage"
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              loading="eager"
+              decoding="async"
+              className={imageClass}
             />
             <img
               src="https://images.pexels.com/photos/1797428/pexels-photo-1797428.jpeg"
               alt="business portraits"
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              loading="eager"
+              decoding="async"
+              className={imageClass}
             />
           </div>
         </div>
       ),
     },
     {
-      title: "2020-2024",
+      title: "2021-2024",
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
@@ -72,29 +82,37 @@ export default function AboutPage() {
             <img
               src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg"
               alt="post production"
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              loading="eager"
+              decoding="async"
+              className={imageClass}
             />
             <img
               src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg"
               alt="architektur"
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              loading="eager"
+              decoding="async"
+              className={imageClass}
             />
             <img
               src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg"
               alt="fashion"
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              loading="eager"
+              decoding="async"
+              className={imageClass}
             />
             <img
               src="https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg"
               alt="social media"
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              loading="eager"
+              decoding="async"
+              className={imageClass}
             />
           </div>
         </div>
       ),
     },
     {
-      title: "2015",
+      title: "2015-2020",
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
@@ -121,12 +139,16 @@ export default function AboutPage() {
             <img
               src="https://images.pexels.com/photos/2228571/pexels-photo-2228571.jpeg"
               alt="konzert"
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              loading="eager"
+              decoding="async"
+              className={imageClass}
             />
             <img
               src="https://images.pexels.com/photos/1166428/pexels-photo-1166428.jpeg"
               alt="anfänge"
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              loading="eager"
+              decoding="async"
+              className={imageClass}
             />
           </div>
         </div>
