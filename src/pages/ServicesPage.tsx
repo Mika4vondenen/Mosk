@@ -57,17 +57,17 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
             {services.map((service, index) => (
               <div
                 key={index}
-                className="group p-8 rounded-xl transition-all duration-300 transform hover:-translate-y-2"
+                className="group text-center"
               >
-                <div className="bg-gradient-to-br from-[#F5B700] to-[#ffc61a] w-16 h-16 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <service.icon className="text-[#0A1F44]" size={32} />
+                <div className="bg-gradient-to-br from-[#F5B700] to-[#ffc61a] w-20 h-20 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 mx-auto">
+                  <service.icon className="text-[#0A1F44]" size={36} />
                 </div>
 
-                <h3 className="text-2xl font-bold text-[#0A1F44]">
+                <h3 className="text-xl font-bold text-gray-300">
                   {service.title}
                 </h3>
               </div>
