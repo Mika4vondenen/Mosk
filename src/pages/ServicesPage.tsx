@@ -100,8 +100,26 @@ export default function ServicesPage() {
                 <p className="text-gray-300 text-sm">Sie erhalten Videos, die Aufmerksamkeit erzeugen und Ihre Marke sichtbar machen – online und offline.</p>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-[#111111] to-[#181818] p-12 rounded-xl flex flex-col items-center">
+            <div className="bg-gradient-to-br from-[#111111] to-[#181818] p-12 rounded-xl">
               <img src="/assets/c8561e14-7996-49e7-b4e0-e4b07a4612b4.png" alt="icon" className="h-16 w-16 mb-6" />
+              <h3 className="text-xl font-bold text-white mb-4">Post-Production / Editing</h3>
+              <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                Seit über fünf Jahren arbeite ich im Bereich Editing und verwandle rohes Videomaterial in modernen, hochwertigen Content. Saubere Schnitte, stimmige Farben und klare Looks stehen dabei im Mittelpunkt.
+              </p>
+              <div className="mb-4">
+                <h4 className="text-white font-semibold text-sm mb-2">Ideal für:</h4>
+                <ul className="text-gray-300 text-sm space-y-1">
+                  <li>• Videoschnitt</li>
+                  <li>• Farbkorrektur (Color Grading)</li>
+                  <li>• Retusche & Bildanpassungen</li>
+                  <li>• Motion Graphics & kleine Effekte</li>
+                  <li>• Social-Media-Optimierungen</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-white font-semibold text-sm mb-2">Ihr Vorteil:</h4>
+                <p className="text-gray-300 text-sm">Sie liefern das Material – und ich mache daraus ein Video, das professionell wirkt und direkt eingesetzt werden kann.</p>
+              </div>
             </div>
           </div>
 
