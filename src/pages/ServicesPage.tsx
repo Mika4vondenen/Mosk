@@ -123,9 +123,9 @@ export default function ServicesPage() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-[#0A1F44] to-[#0d2a5c] p-12 rounded-xl text-center">
+          <div className="bg-black p-12 rounded-xl text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Bereit für Ihr Projekt?
+              Starten wir Ihr Projekt!
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Kontaktieren Sie uns für ein unverbindliches Erstgespräch und lassen Sie uns gemeinsam Ihre Vision verwirklichen.
