@@ -57,18 +57,6 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="group text-center"
-              >
-                <h3 className="text-xl font-bold text-gray-300">
-                  {service.title}
-                </h3>
-              </div>
-            ))}
-          </div>
 
           <div className="bg-gradient-to-br from-[#0A1F44] to-[#0d2a5c] p-12 rounded-xl text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
