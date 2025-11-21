@@ -64,7 +64,8 @@ export default function ServicesPage() {
             <div className="bg-gradient-to-br from-[#111111] to-[#181818] p-12 rounded-xl flex flex-col items-center">
               <img src="/assets/1d9e47f1-8932-407d-aeb3-9505a3ad35ef.png" alt="icon" className="h-16 w-16 mb-6" />
             </div>
-            <div className="bg-gradient-to-br from-[#111111] to-[#181818] p-12 rounded-xl">
+            <div className="bg-gradient-to-br from-[#111111] to-[#181818] p-12 rounded-xl flex flex-col items-center">
+              <img src="/assets/c8561e14-7996-49e7-b4e0-e4b07a4612b4.png" alt="icon" className="h-16 w-16 mb-6" />
             </div>
           </div>
 
