@@ -1,4 +1,4 @@
-import { Home, Zap, Info, Image, Mail } from 'lucide-react';
+import { Zap, Info, Image, Mail } from 'lucide-react';
 import { NavBar } from './ui/tubelight-navbar';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';

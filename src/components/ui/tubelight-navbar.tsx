@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { LucideIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
@@ -18,17 +18,6 @@ interface NavBarProps {
 
 export function NavBar({ items, className, activeSection }: NavBarProps) {
   const [activeTab, setActiveTab] = useState(items[0].name)
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-
-    handleResize()
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
 
   useEffect(() => {
     if (activeSection) {
@@ -65,13 +54,15 @@ export function NavBar({ items, className, activeSection }: NavBarProps) {
                     <img src={item.image} alt={item.name} className="h-5 w-5" />
                   </span>
                 </>
-              ) : (
+              ) : Icon ? (
                 <>
                   <span className="hidden md:inline">{item.name}</span>
                   <span className="md:hidden">
                     <Icon size={18} strokeWidth={2.5} />
                   </span>
                 </>
+              ) : (
+                <span>{item.name}</span>
               )}
               {isActive && (
                 <motion.div
