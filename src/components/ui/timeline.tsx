@@ -38,8 +38,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     >
       <BGPattern variant="grid" mask="fade-edges" fill="rgba(209, 213, 219, 0.15)" size={60} />
       <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10 relative z-20">
-        <h2 className="text-lg md:text-4xl mb-4 text-white max-w-4xl">
-          Unsere Geschichte
+        <h2 className="text-lg md:text-4xl mb-4 text-white max-w-4xl" style={{ fontFamily: "'Bebas Neue', sans-serif", fontWeight: 400 }}>
+          Meine Geschichte
         </h2>
         <p className="text-neutral-300 text-sm md:text-base max-w-sm">
           Über 10 Jahre Leidenschaft für visuelle Exzellenz
