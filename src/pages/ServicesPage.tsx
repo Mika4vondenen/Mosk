@@ -79,8 +79,26 @@ export default function ServicesPage() {
                 <p className="text-gray-300 text-sm">Sie bekommen Bilder, die sofort nutzbar sind und Ihre Marke hochwertig wirken lassen.</p>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-[#111111] to-[#181818] p-12 rounded-xl flex flex-col items-center">
+            <div className="bg-gradient-to-br from-[#111111] to-[#181818] p-12 rounded-xl">
               <img src="/assets/1d9e47f1-8932-407d-aeb3-9505a3ad35ef.png" alt="icon" className="h-16 w-16 mb-6" />
+              <h3 className="text-xl font-bold text-white mb-4">Videoproduktion</h3>
+              <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                Seit 2021 produziere ich Eventfilme, Werbevideos und Social-Media-Content für lokale Unternehmen. Mein Fokus liegt auf dynamischen Bildern, klarer Bildsprache und Videos, die Wirkung erzeugen.
+              </p>
+              <div className="mb-4">
+                <h4 className="text-white font-semibold text-sm mb-2">Ideal für:</h4>
+                <ul className="text-gray-300 text-sm space-y-1">
+                  <li>• Social-Media-Videos</li>
+                  <li>• Werbeclips für Geschäfte</li>
+                  <li>• Eventfilme & Aftermovies</li>
+                  <li>• Imagevideos</li>
+                  <li>• Content für Websites & Ads</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-white font-semibold text-sm mb-2">Ihr Vorteil:</h4>
+                <p className="text-gray-300 text-sm">Sie erhalten Videos, die Aufmerksamkeit erzeugen und Ihre Marke sichtbar machen – online und offline.</p>
+              </div>
             </div>
             <div className="bg-gradient-to-br from-[#111111] to-[#181818] p-12 rounded-xl flex flex-col items-center">
               <img src="/assets/c8561e14-7996-49e7-b4e0-e4b07a4612b4.png" alt="icon" className="h-16 w-16 mb-6" />
