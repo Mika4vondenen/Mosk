@@ -66,10 +66,3 @@ footer * {
   color: #f59e0b;
   transition: color 0.3s ease;
 }
-
-.service-box:hover p,
-.service-box:hover li,
-.service-box:hover h4 {
-  color: #f59e0b;
-  transition: color 0.3s ease;
-}
