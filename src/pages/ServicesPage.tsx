@@ -1,4 +1,4 @@
-import { Camera, Video, Scissors, Lightbulb, Users, Zap, ArrowRight } from 'lucide-react';
+import { Camera, Video, Scissors, Users, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const services = [
@@ -21,22 +21,10 @@ const services = [
     features: ['Video-Editing', 'Farbkorrektur', 'Bildretusche', 'Motion Graphics']
   },
   {
-    icon: Lightbulb,
-    title: 'Kreativberatung',
-    description: 'Konzeptentwicklung und kreative Strategien für Ihre visuellen Projekte und Kampagnen.',
-    features: ['Konzeptentwicklung', 'Storyboarding', 'Kampagnenplanung', 'Creative Direction']
-  },
-  {
     icon: Users,
     title: 'Event-Coverage',
     description: 'Komplette Dokumentation Ihrer Veranstaltungen, Messen und Firmenevents in Bild und Video.',
     features: ['Live-Streaming', 'Eventfotografie', 'Aftermovies', 'Dokumentation']
-  },
-  {
-    icon: Zap,
-    title: 'Express-Service',
-    description: 'Schnelle Bearbeitung für dringende Projekte ohne Qualitätsverlust innerhalb von 24-48 Stunden.',
-    features: ['24h Express', 'Prioritätsbearbeitung', 'Direktkontakt', 'Sofortlieferung']
   }
 ];
 
