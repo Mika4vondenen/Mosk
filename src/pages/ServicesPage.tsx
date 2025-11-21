@@ -58,13 +58,13 @@ export default function ServicesPage() {
 
   return (
     <div className="pt-32">
-      <section className="py-24 bg-[#F4F6F8]">
+      <section className="py-24" style={{ backgroundColor: '#262626' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold text-[#0A1F44] mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Unsere Foto-, Video- & Editing-Services
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Von der ersten Idee bis zum fertigen Projekt – wir begleiten Sie mit Professionalität und Leidenschaft.
             </p>
           </div>
