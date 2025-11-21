@@ -62,7 +62,7 @@ export default function ServicesPage() {
               <img src="/assets/5dcbd8e8-73be-4b58-8b97-90007764cead.png" alt="icon" className="h-16 w-16 mb-6" />
               <h3 className="text-xl font-bold text-white mb-4">Event- & Businessfotografie</h3>
               <p className="text-gray-300 text-sm mb-4 leading-relaxed">
-                Seit 2022 begleitet MOSK Unlimited Festivals, Events und Unternehmen mit professioneller Fotografie. Klare Farben, starke Momente, moderner Look.
+                Seit 2022 begleite ich Festivals, Events und Unternehmen mit professioneller Fotografie. Klare Farben, starke Momente und ein moderner Look stehen bei mir im Fokus.
               </p>
               <div className="mb-4">
                 <h4 className="text-white font-semibold text-sm mb-2">Ideal für:</h4>
@@ -76,7 +76,7 @@ export default function ServicesPage() {
               </div>
               <div>
                 <h4 className="text-white font-semibold text-sm mb-2">Ihr Vorteil:</h4>
-                <p className="text-gray-300 text-sm">Bilder, die sofort nutzbar sind und Ihre Marke hochwertig wirken lassen.</p>
+                <p className="text-gray-300 text-sm">Sie bekommen Bilder, die sofort nutzbar sind und Ihre Marke hochwertig wirken lassen.</p>
               </div>
             </div>
             <div className="bg-gradient-to-br from-[#111111] to-[#181818] p-12 rounded-xl flex flex-col items-center">
