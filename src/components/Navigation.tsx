@@ -11,7 +11,7 @@ export default function Navigation() {
 
   useEffect(() => {
     if (location.pathname === '/services') {
-      setActiveSection('Leistungen');
+      setActiveSection('Services');
       return;
     } else if (location.pathname === '/about') {
       setActiveSection('Über mich');
@@ -87,7 +87,7 @@ export default function Navigation() {
 
   const navItems = [
     { name: 'Home', image: '/assets/ChatGPT Image 20. Nov. 2025, 22_43_05.png', onClick: () => goToHome() },
-    { name: 'Leistungen', icon: Zap, onClick: () => navigate('/services') },
+    { name: 'Services', icon: Zap, onClick: () => navigate('/services') },
     { name: 'Über mich', icon: Info, onClick: () => navigate('/about') },
     { name: 'Portfolio', icon: Image, onClick: () => navigate('/portfolio') },
     { name: 'Kontakt', icon: Mail, onClick: () => scrollToContact() },
