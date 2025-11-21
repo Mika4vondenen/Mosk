@@ -57,8 +57,8 @@ export default function ServicesPage() {
   };
 
   return (
-    <div className="pt-32">
-      <section className="py-24" style={{ backgroundColor: '#262626' }}>
+    <div>
+      <section className="pt-32 py-24" style={{ backgroundColor: '#262626' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
