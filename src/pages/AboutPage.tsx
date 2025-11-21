@@ -29,37 +29,40 @@ export default function AboutPage() {
 
   const timelineData = [
     {
-      title: "2025",
+      title: "2021",
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            Expansion unserer Services und Integration modernster KI-gestützter Bearbeitungstechnologien. Lancierung neuer Express-Services für noch schnellere Projektabwicklung.
+            Die Gründung von Edit by Mosk - mit einer klaren Vision und Leidenschaft für visuelle Exzellenz.
           </p>
+          <div className="mb-8">
+            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
+              ✅ Erste Produktfotografie-Projekte
+            </div>
+            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
+              ✅ Aufbau eines professionellen Studios
+            </div>
+            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
+              ✅ Erste Imagefilme für lokale Unternehmen
+            </div>
+            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
+              ✅ Investition in modernste Kameratechnik
+            </div>
+            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
+              ✅ Entwicklung unserer Qualitätsstandards
+            </div>
+          </div>
           <div className="grid grid-cols-2 gap-4">
             <img
+              src="https://images.pexels.com/photos/2228571/pexels-photo-2228571.jpeg"
+              alt="konzert"
+              loading="eager"
+              decoding="async"
+              className={imageClass}
+            />
+            <img
               src="https://images.pexels.com/photos/1166428/pexels-photo-1166428.jpeg"
-              alt="produktfotografie"
-              loading="eager"
-              decoding="async"
-              className={imageClass}
-            />
-            <img
-              src="https://images.pexels.com/photos/3784221/pexels-photo-3784221.jpeg"
-              alt="videoproduktion"
-              loading="eager"
-              decoding="async"
-              className={imageClass}
-            />
-            <img
-              src="https://images.pexels.com/photos/1058277/pexels-photo-1058277.jpeg"
-              alt="event coverage"
-              loading="eager"
-              decoding="async"
-              className={imageClass}
-            />
-            <img
-              src="https://images.pexels.com/photos/1797428/pexels-photo-1797428.jpeg"
-              alt="business portraits"
+              alt="anfänge"
               loading="eager"
               decoding="async"
               className={imageClass}
@@ -69,7 +72,7 @@ export default function AboutPage() {
       ),
     },
     {
-      title: "2021-2024",
+      title: "2022-2024",
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
@@ -112,40 +115,37 @@ export default function AboutPage() {
       ),
     },
     {
-      title: "2015-2020",
+      title: "2025",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
-            Die Gründung von Edit by Mosk - mit einer klaren Vision und Leidenschaft für visuelle Exzellenz.
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+            Expansion unserer Services und Integration modernster KI-gestützter Bearbeitungstechnologien. Lancierung neuer Express-Services für noch schnellere Projektabwicklung.
           </p>
-          <div className="mb-8">
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Erste Produktfotografie-Projekte
-            </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Aufbau eines professionellen Studios
-            </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Erste Imagefilme für lokale Unternehmen
-            </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Investition in modernste Kameratechnik
-            </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Entwicklung unserer Qualitätsstandards
-            </div>
-          </div>
           <div className="grid grid-cols-2 gap-4">
             <img
-              src="https://images.pexels.com/photos/2228571/pexels-photo-2228571.jpeg"
-              alt="konzert"
+              src="https://images.pexels.com/photos/1166428/pexels-photo-1166428.jpeg"
+              alt="produktfotografie"
               loading="eager"
               decoding="async"
               className={imageClass}
             />
             <img
-              src="https://images.pexels.com/photos/1166428/pexels-photo-1166428.jpeg"
-              alt="anfänge"
+              src="https://images.pexels.com/photos/3784221/pexels-photo-3784221.jpeg"
+              alt="videoproduktion"
+              loading="eager"
+              decoding="async"
+              className={imageClass}
+            />
+            <img
+              src="https://images.pexels.com/photos/1058277/pexels-photo-1058277.jpeg"
+              alt="event coverage"
+              loading="eager"
+              decoding="async"
+              className={imageClass}
+            />
+            <img
+              src="https://images.pexels.com/photos/1797428/pexels-photo-1797428.jpeg"
+              alt="business portraits"
               loading="eager"
               decoding="async"
               className={imageClass}
