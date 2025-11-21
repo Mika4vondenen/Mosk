@@ -41,9 +41,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         <h2 className="text-4xl md:text-6xl mb-4 text-white max-w-4xl" style={{ fontFamily: "'Bebas Neue', sans-serif", fontWeight: 400 }}>
           Meine Geschichte
         </h2>
-        <p className="text-neutral-300 text-sm md:text-base max-w-sm">
-          Über 10 Jahre Leidenschaft für visuelle Exzellenz
-        </p>
       </div>
 
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20 z-20">
