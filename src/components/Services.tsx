@@ -62,17 +62,17 @@ export default function Services() {
                 <service.icon className="text-[#0A1F44]" size={32} />
               </div>
 
-              <h3 className="text-2xl font-bold text-white mb-3">
+              <h3 className="text-2xl font-bold text-[#0A1F44] mb-3">
                 {service.title}
               </h3>
 
-              <p className="text-gray-300 mb-4 leading-relaxed">
+              <p className="text-gray-600 mb-4 leading-relaxed">
                 {service.description}
               </p>
 
               <ul className="space-y-2">
                 {service.features.map((feature, idx) => (
-                  <li key={idx} className="text-sm text-gray-400 flex items-center">
+                  <li key={idx} className="text-sm text-gray-500 flex items-center">
                     <span className="w-1.5 h-1.5 bg-[#F5B700] rounded-full mr-2"></span>
                     {feature}
                   </li>
