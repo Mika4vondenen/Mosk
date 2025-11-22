@@ -1,40 +1,24 @@
 import { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 
 interface AnimationContextType {
-  hasVisitedHomepage: boolean;
-  setHasVisitedHomepage: (value: boolean) => void;
-  hasVisitedServicesPage: boolean;
-  setHasVisitedServicesPage: (value: boolean) => void;
+  showInitialAnimation: boolean;
 }
 
 const AnimationContext = createContext<AnimationContextType | undefined>(undefined);
 
 export function AnimationProvider({ children }: { children: ReactNode }) {
-  const [hasVisitedHomepage, setHasVisitedHomepage] = useState(() => {
-    if (typeof window === 'undefined') return false;
-    return sessionStorage.getItem('hasVisitedHomepage') === 'true';
+  const [showInitialAnimation, setShowInitialAnimation] = useState(() => {
+    if (typeof window === 'undefined') return true;
+    const hasShown = sessionStorage.getItem('initialAnimationShown') === 'true';
+    if (!hasShown) {
+      sessionStorage.setItem('initialAnimationShown', 'true');
+      return true;
+    }
+    return false;
   });
-
-  const [hasVisitedServicesPage, setHasVisitedServicesPage] = useState(() => {
-    if (typeof window === 'undefined') return false;
-    return sessionStorage.getItem('hasVisitedServicesPage') === 'true';
-  });
-
-  useEffect(() => {
-    sessionStorage.setItem('hasVisitedHomepage', String(hasVisitedHomepage));
-  }, [hasVisitedHomepage]);
-
-  useEffect(() => {
-    sessionStorage.setItem('hasVisitedServicesPage', String(hasVisitedServicesPage));
-  }, [hasVisitedServicesPage]);
 
   return (
-    <AnimationContext.Provider value={{
-      hasVisitedHomepage,
-      setHasVisitedHomepage,
-      hasVisitedServicesPage,
-      setHasVisitedServicesPage
-    }}>
+    <AnimationContext.Provider value={{ showInitialAnimation }}>
       {children}
     </AnimationContext.Provider>
   );
