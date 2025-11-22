@@ -85,11 +85,26 @@ export default function Navigation() {
     setTimeout(() => { isScrollingRef.current = false; }, 100);
   };
 
+  const goToServices = () => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    navigate('/services');
+  };
+
+  const goToAbout = () => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    navigate('/about');
+  };
+
+  const goToPortfolio = () => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    navigate('/portfolio');
+  };
+
   const navItems = [
     { name: 'Home', image: '/assets/ChatGPT Image 20. Nov. 2025, 22_43_05.png', onClick: () => goToHome() },
-    { name: 'Services', icon: Zap, onClick: () => navigate('/services') },
-    { name: 'Über mich', icon: Info, onClick: () => navigate('/about') },
-    { name: 'Portfolio', icon: Image, onClick: () => navigate('/portfolio') },
+    { name: 'Services', icon: Zap, onClick: () => goToServices() },
+    { name: 'Über mich', icon: Info, onClick: () => goToAbout() },
+    { name: 'Portfolio', icon: Image, onClick: () => goToPortfolio() },
     { name: 'Kontakt', icon: Mail, onClick: () => scrollToContact() },
   ]
 
