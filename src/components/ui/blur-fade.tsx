@@ -39,8 +39,9 @@ export function BlurFade({
 }: BlurFadeProps) {
   const ref = useRef(null);
   const inViewResult = useInView(ref, { once: true, margin: inViewMargin });
-
-  // Hier liegt der Trick: Wir fragen SOFORT beim Laden, ob der Nutzer schon da war.
+  
+  // Das hier ist die wichtige Änderung:
+  // Wir prüfen SOFORT beim Starten, ob die Animation schon mal lief.
   const [skipAnimation, setSkipAnimation] = useState(() => {
     if (typeof window !== "undefined" && sessionKey) {
       return sessionStorage.getItem(sessionKey) === "true";
@@ -48,27 +49,28 @@ export function BlurFade({
     return false;
   });
 
+  const isInView = !inView || inViewResult;
+
   useEffect(() => {
-    // Wir merken uns nur, dass die Animation lief, wenn sie wirklich startet.
-    if (inView && sessionKey && !skipAnimation) {
+    // Wenn das Element sichtbar wird, merken wir uns das für die Zukunft
+    if (isInView && sessionKey && !skipAnimation) {
       sessionStorage.setItem(sessionKey, "true");
     }
-  }, [inView, sessionKey, skipAnimation]);
+  }, [isInView, sessionKey, skipAnimation]);
 
-  const isInView = !inView || inViewResult;
   const defaultVariants: Variants = {
     hidden: { y: yOffset, opacity: 0, filter: `blur(${blur})` },
     visible: { y: -yOffset, opacity: 1, filter: `blur(0px)` },
   };
   const combinedVariants = variant || defaultVariants;
 
-  // Wenn wir die Animation überspringen sollen, zeigen wir den Inhalt einfach sofort an.
-  // Ohne Animationseffekte.
+  // Wenn die Animation übersprungen werden soll, geben wir einfach den
+  // fertigen Inhalt zurück - ohne Animationstechnik.
   if (skipAnimation) {
     return (
-      <div
-        ref={ref}
-        className={className}
+      <div 
+        ref={ref} 
+        className={className} 
         style={{ opacity: 1, filter: "blur(0px)", transform: "none" }}
       >
         {children}
@@ -76,6 +78,7 @@ export function BlurFade({
     );
   }
 
+  // Andernfalls: Animation abspielen
   return (
     <AnimatePresence>
       <motion.div
