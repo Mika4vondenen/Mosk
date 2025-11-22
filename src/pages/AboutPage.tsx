@@ -1,5 +1,4 @@
 import { Timeline } from '../components/ui/timeline';
-import { BlurFade } from '../components/ui/blur-fade';
 
 export default function AboutPage() {
 
@@ -59,9 +58,7 @@ export default function AboutPage() {
   return (
     <div className="pt-32">
       <section className="bg-black">
-        <BlurFade delay={0.25} inView={true}>
-          <Timeline data={timelineData} />
-        </BlurFade>
+        <Timeline data={timelineData} />
       </section>
     </div>
   );
