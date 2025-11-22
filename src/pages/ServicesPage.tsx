@@ -24,7 +24,7 @@ export default function ServicesPage() {
     <div>
       <section className="pt-32 py-24" style={{ backgroundColor: '#262626' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <BlurFade delay={0.25} inView={showInitialAnimation}>
+          <BlurFade delay={0.25} inView={showInitialAnimation} sessionKey="services-header">
             <div className="text-center mb-16">
               <h1 className="text-5xl md:text-6xl font-bold mb-6 dm-serif-text-regular" style={{ color: '#f59e0b' }}>
                 Unsere Foto-, Video- & Editing-Services
@@ -35,7 +35,7 @@ export default function ServicesPage() {
             </div>
           </BlurFade>
 
-          <BlurFade delay={0.5} inView={showInitialAnimation}>
+          <BlurFade delay={0.5} inView={showInitialAnimation} sessionKey="services-cards">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
               <div className="service-box bg-gradient-to-br from-[#111111] to-[#181818] p-12 rounded-xl">
               <img src="/assets/5dcbd8e8-73be-4b58-8b97-90007764cead.png" alt="icon" className="service-icon h-16 w-16 mb-6" />
@@ -103,7 +103,7 @@ export default function ServicesPage() {
             </div>
           </BlurFade>
 
-          <BlurFade delay={0.75} inView={showInitialAnimation}>
+          <BlurFade delay={0.75} inView={showInitialAnimation} sessionKey="services-cta">
             <div className="bg-black p-12 rounded-xl text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Starten wir Ihr Projekt!

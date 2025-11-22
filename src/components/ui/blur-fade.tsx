@@ -1,4 +1,4 @@
-import { useRef } from "react"
+import { useRef, useEffect, useState } from "react"
 import {
   AnimatePresence,
   motion,
@@ -22,6 +22,7 @@ interface BlurFadeProps {
   inView?: boolean
   inViewMargin?: MarginType
   blur?: string
+  sessionKey?: string
 }
 
 export function BlurFade({
@@ -34,15 +35,38 @@ export function BlurFade({
   inView = false,
   inViewMargin = "-50px",
   blur = "6px",
+  sessionKey,
 }: BlurFadeProps) {
   const ref = useRef(null)
   const inViewResult = useInView(ref, { once: true, margin: inViewMargin })
+  const [skipAnimation, setSkipAnimation] = useState(false)
+
+  useEffect(() => {
+    if (inView && sessionKey) {
+      const hasAnimated = sessionStorage.getItem(sessionKey)
+      if (hasAnimated) {
+        setSkipAnimation(true)
+      } else {
+        sessionStorage.setItem(sessionKey, 'true')
+      }
+    }
+  }, [inView, sessionKey])
+
   const isInView = !inView || inViewResult
   const defaultVariants: Variants = {
     hidden: { y: yOffset, opacity: 0, filter: `blur(${blur})` },
     visible: { y: -yOffset, opacity: 1, filter: `blur(0px)` },
   }
   const combinedVariants = variant || defaultVariants
+
+  if (skipAnimation) {
+    return (
+      <div ref={ref} className={className} style={{ opacity: 1, filter: 'blur(0px)' }}>
+        {children}
+      </div>
+    )
+  }
+
   return (
     <AnimatePresence>
       <motion.div
