@@ -1,33 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-const services = [
-  {
-    icon: Camera,
-    title: 'Fotografie',
-    description: 'Hochwertige Produktfotografie, Business-Portraits, Event- und Architekturfotografie für Ihr Unternehmen.',
-    features: ['Produktfotografie', 'Business-Portraits', 'Eventdokumentation', 'Architekturfotografie']
-  },
-  {
-    icon: Video,
-    title: 'Videoproduktion',
-    description: 'Professionelle Imagefilme, Werbevideos, Eventaufnahmen und Social-Media-Content mit modernster Technik.',
-    features: ['Imagefilme', 'Werbevideos', 'Drohnenaufnahmen', 'Social Media Videos']
-  },
-  {
-    icon: Scissors,
-    title: 'Post-Production',
-    description: 'Professionelles Editing, Farbkorrektur, Retusche und Motion Graphics für perfekte Endergebnisse.',
-    features: ['Video-Editing', 'Farbkorrektur', 'Bildretusche', 'Motion Graphics']
-  },
-  {
-    icon: Users,
-    title: 'Event-Coverage',
-    description: 'Komplette Dokumentation Ihrer Veranstaltungen, Messen und Firmenevents in Bild und Video.',
-    features: ['Live-Streaming', 'Eventfotografie', 'Aftermovies', 'Dokumentation']
-  }
-];
-
 export default function ServicesPage() {
   const navigate = useNavigate();
 
