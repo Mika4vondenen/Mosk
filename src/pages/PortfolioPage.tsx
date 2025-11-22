@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { BlurFade } from '../components/ui/blur-fade';
 
 const portfolioItems = [
   {
@@ -79,20 +80,24 @@ export default function PortfolioPage() {
       <section className="py-24 bg-[#F4F6F8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold text-[#0A1F44] mb-6">
-              Portfolio
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Ein Einblick in unsere Arbeit – Projekte, die begeistern und überzeugen.
-            </p>
+            <BlurFade delay={0.25} inView>
+              <h1 className="text-5xl md:text-6xl font-bold text-[#0A1F44] mb-6">
+                Portfolio
+              </h1>
+            </BlurFade>
+            <BlurFade delay={0.5} inView>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Ein Einblick in unsere Arbeit – Projekte, die begeistern und überzeugen.
+              </p>
+            </BlurFade>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {portfolioItems.map((item, index) => (
-              <div
-                key={index}
-                className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
-              >
+              <BlurFade key={index} delay={0.75 + index * 0.1} inView>
+                <div
+                  className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                >
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
                     src={item.image}
@@ -113,10 +118,12 @@ export default function PortfolioPage() {
                   </p>
                 </div>
               </div>
+              </BlurFade>
             ))}
           </div>
 
-          <div className="bg-gradient-to-br from-[#0A1F44] to-[#0d2a5c] p-12 rounded-xl text-center">
+          <BlurFade delay={1.75} inView>
+            <div className="bg-gradient-to-br from-[#0A1F44] to-[#0d2a5c] p-12 rounded-xl text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Lassen Sie uns Ihr nächstes Projekt starten
             </h2>
@@ -130,7 +137,8 @@ export default function PortfolioPage() {
               Jetzt Kontakt aufnehmen
               <ArrowRight className="group-hover:translate-x-1 transition-transform duration-300" size={20} />
             </button>
-          </div>
+            </div>
+          </BlurFade>
         </div>
       </section>
     </div>
