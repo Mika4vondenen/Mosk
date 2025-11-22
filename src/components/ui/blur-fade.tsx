@@ -39,18 +39,19 @@ export function BlurFade({
 }: BlurFadeProps) {
   const ref = useRef(null)
   const inViewResult = useInView(ref, { once: true, margin: inViewMargin })
-  const [skipAnimation, setSkipAnimation] = useState(false)
+
+  const [skipAnimation] = useState(() => {
+    if (typeof window === 'undefined' || !inView || !sessionKey) {
+      return false
+    }
+    return sessionStorage.getItem(sessionKey) === 'true'
+  })
 
   useEffect(() => {
-    if (inView && sessionKey) {
-      const hasAnimated = sessionStorage.getItem(sessionKey)
-      if (hasAnimated) {
-        setSkipAnimation(true)
-      } else {
-        sessionStorage.setItem(sessionKey, 'true')
-      }
+    if (inView && sessionKey && !skipAnimation) {
+      sessionStorage.setItem(sessionKey, 'true')
     }
-  }, [inView, sessionKey])
+  }, [inView, sessionKey, skipAnimation])
 
   const isInView = !inView || inViewResult
   const defaultVariants: Variants = {
