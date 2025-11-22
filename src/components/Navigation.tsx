@@ -86,18 +86,18 @@ export default function Navigation() {
   };
 
   const goToServices = () => {
-    window.scrollTo({ top: 0, behavior: 'auto' });
     navigate('/services');
+    window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
   const goToAbout = () => {
-    window.scrollTo({ top: 0, behavior: 'auto' });
     navigate('/about');
+    window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
   const goToPortfolio = () => {
-    window.scrollTo({ top: 0, behavior: 'auto' });
     navigate('/portfolio');
+    window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
   const navItems = [
