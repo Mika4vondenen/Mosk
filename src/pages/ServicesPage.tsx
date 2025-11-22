@@ -50,12 +50,12 @@ export default function ServicesPage() {
       <section className="pt-32 py-24" style={{ backgroundColor: '#262626' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <BlurFade delay={0.25} inView>
+            <BlurFade delay={0.25} inView={true}>
               <h1 className="text-5xl md:text-6xl font-bold mb-6 dm-serif-text-regular" style={{ color: '#f59e0b' }}>
                 Unsere Foto-, Video- & Editing-Services
               </h1>
             </BlurFade>
-            <BlurFade delay={0.5} inView>
+            <BlurFade delay={0.5} inView={true}>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                 Von der ersten Idee bis zum fertigen Projekt – wir begleiten Sie mit Professionalität und Leidenschaft.
               </p>
@@ -63,7 +63,7 @@ export default function ServicesPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <BlurFade delay={0.75} inView>
+            <BlurFade delay={0.75} inView={true}>
               <div className="service-box bg-gradient-to-br from-[#111111] to-[#181818] p-12 rounded-xl">
                 <img src="/assets/5dcbd8e8-73be-4b58-8b97-90007764cead.png" alt="icon" className="service-icon h-16 w-16 mb-6" />
                 <h3 className="service-title text-xl font-bold text-white mb-4">Event- & Businessfotografie</h3>
@@ -86,7 +86,7 @@ export default function ServicesPage() {
                 </div>
               </div>
             </BlurFade>
-            <BlurFade delay={1} inView>
+            <BlurFade delay={1} inView={true}>
               <div className="service-box bg-gradient-to-br from-[#111111] to-[#181818] p-12 rounded-xl">
                 <img src="/assets/1d9e47f1-8932-407d-aeb3-9505a3ad35ef.png" alt="icon" className="service-icon h-16 w-16 mb-6" />
                 <h3 className="service-title text-xl font-bold text-white mb-4">Videoproduktion</h3>
@@ -109,7 +109,7 @@ export default function ServicesPage() {
                 </div>
               </div>
             </BlurFade>
-            <BlurFade delay={1.25} inView>
+            <BlurFade delay={1.25} inView={true}>
               <div className="service-box bg-gradient-to-br from-[#111111] to-[#181818] p-12 rounded-xl">
                 <img src="/assets/c8561e14-7996-49e7-b4e0-e4b07a4612b4.png" alt="icon" className="service-icon h-16 w-16 mb-6" />
                 <h3 className="service-title text-xl font-bold text-white mb-4">Post-Production / Editing</h3>
@@ -134,7 +134,7 @@ export default function ServicesPage() {
             </BlurFade>
           </div>
 
-          <BlurFade delay={1.5} inView>
+          <BlurFade delay={1.5} inView={true}>
             <div className="bg-black p-12 rounded-xl text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Starten wir Ihr Projekt!

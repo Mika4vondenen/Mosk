@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { InteractiveHoverButton } from './ui/interactive-hover-button';
 import { BlurFade } from './ui/blur-fade';
+import { useAnimation } from '../context/AnimationContext';
 
 export default function Hero() {
   const images = [
@@ -10,6 +11,13 @@ export default function Hero() {
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const { hasVisitedHomepage, setHasVisitedHomepage } = useAnimation();
+
+  useEffect(() => {
+    if (!hasVisitedHomepage) {
+      setHasVisitedHomepage(true);
+    }
+  }, [hasVisitedHomepage, setHasVisitedHomepage]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -43,20 +51,20 @@ export default function Hero() {
       ))}
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
-        <BlurFade delay={0.25} inView>
+        <BlurFade delay={0.25} inView={!hasVisitedHomepage}>
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: "'Bebas Neue', sans-serif", fontWeight: 400 }}>
             STARKE FOTOS. STARKE VIDEOS. STARKES EDITING.<br />
             <span className="text-[#f59e0b]">ALLES AUS EINER HAND.</span>
           </h1>
         </BlurFade>
 
-        <BlurFade delay={0.5} inView>
+        <BlurFade delay={0.5} inView={!hasVisitedHomepage}>
           <p className="text-xl md:text-2xl text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed">
             Wir verwandeln Ihre Vision in visuelle Meisterwerke. Für Privatkunden und Unternehmen in ganz Deutschland.
           </p>
         </BlurFade>
 
-        <BlurFade delay={0.75} inView>
+        <BlurFade delay={0.75} inView={!hasVisitedHomepage}>
           <InteractiveHoverButton
             text="Starten"
             onClick={scrollToContact}

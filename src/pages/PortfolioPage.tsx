@@ -80,12 +80,12 @@ export default function PortfolioPage() {
       <section className="py-24 bg-[#F4F6F8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <BlurFade delay={0.25} inView>
+            <BlurFade delay={0.25} inView={true}>
               <h1 className="text-5xl md:text-6xl font-bold text-[#0A1F44] mb-6">
                 Portfolio
               </h1>
             </BlurFade>
-            <BlurFade delay={0.5} inView>
+            <BlurFade delay={0.5} inView={true}>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Ein Einblick in unsere Arbeit – Projekte, die begeistern und überzeugen.
               </p>
@@ -94,7 +94,7 @@ export default function PortfolioPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {portfolioItems.map((item, index) => (
-              <BlurFade key={index} delay={0.75 + index * 0.1} inView>
+              <BlurFade key={index} delay={0.75 + index * 0.1} inView={true}>
                 <div
                   className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
                 >
@@ -122,7 +122,7 @@ export default function PortfolioPage() {
             ))}
           </div>
 
-          <BlurFade delay={1.75} inView>
+          <BlurFade delay={1.75} inView={true}>
             <div className="bg-gradient-to-br from-[#0A1F44] to-[#0d2a5c] p-12 rounded-xl text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Lassen Sie uns Ihr nächstes Projekt starten

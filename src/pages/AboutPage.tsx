@@ -59,7 +59,7 @@ export default function AboutPage() {
   return (
     <div className="pt-32">
       <section className="bg-black">
-        <BlurFade delay={0.25} inView>
+        <BlurFade delay={0.25} inView={true}>
           <Timeline data={timelineData} />
         </BlurFade>
       </section>

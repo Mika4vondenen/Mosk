@@ -6,29 +6,32 @@ import Footer from './components/Footer';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import PortfolioPage from './pages/PortfolioPage';
+import { AnimationProvider } from './context/AnimationContext';
 
 function App() {
   return (
-    <Router>
-      <div className="min-h-screen">
-        <Navigation />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Hero />
-                <Contact />
-              </>
-            }
-          />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/portfolio" element={<PortfolioPage />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    <AnimationProvider>
+      <Router>
+        <div className="min-h-screen">
+          <Navigation />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <Hero />
+                  <Contact />
+                </>
+              }
+            />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/portfolio" element={<PortfolioPage />} />
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+    </AnimationProvider>
   );
 }
 
