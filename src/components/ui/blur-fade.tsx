@@ -25,6 +25,12 @@ interface BlurFadeProps {
   sessionKey?: string;
 }
 
+// WICHTIG: Diese Liste liegt außerhalb der Komponente.
+// Sie merkt sich, was schon animiert wurde.
+// Beim Refresh (F5) wird sie automatisch gelöscht -> Animation kommt wieder.
+// Beim Tab-Wechsel bleibt sie erhalten -> Animation wird übersprungen.
+const animationCache = new Set<string>();
+
 export function BlurFade({
   children,
   className,
@@ -39,12 +45,11 @@ export function BlurFade({
 }: BlurFadeProps) {
   const ref = useRef(null);
   const inViewResult = useInView(ref, { once: true, margin: inViewMargin });
-  
-  // Das hier ist die wichtige Änderung:
-  // Wir prüfen SOFORT beim Starten, ob die Animation schon mal lief.
-  const [skipAnimation, setSkipAnimation] = useState(() => {
-    if (typeof window !== "undefined" && sessionKey) {
-      return sessionStorage.getItem(sessionKey) === "true";
+
+  const [skipAnimation] = useState(() => {
+    // Wir schauen in unsere temporäre Liste (Cache) statt in den sessionStorage
+    if (sessionKey && animationCache.has(sessionKey)) {
+      return true;
     }
     return false;
   });
@@ -52,9 +57,9 @@ export function BlurFade({
   const isInView = !inView || inViewResult;
 
   useEffect(() => {
-    // Wenn das Element sichtbar wird, merken wir uns das für die Zukunft
+    // Wenn die Animation läuft, merken wir uns den Key in der Liste
     if (isInView && sessionKey && !skipAnimation) {
-      sessionStorage.setItem(sessionKey, "true");
+      animationCache.add(sessionKey);
     }
   }, [isInView, sessionKey, skipAnimation]);
 
@@ -64,8 +69,7 @@ export function BlurFade({
   };
   const combinedVariants = variant || defaultVariants;
 
-  // Wenn die Animation übersprungen werden soll, geben wir einfach den
-  // fertigen Inhalt zurück - ohne Animationstechnik.
+  // Wenn im Cache gefunden: Statisch anzeigen
   if (skipAnimation) {
     return (
       <div 
@@ -78,7 +82,7 @@ export function BlurFade({
     );
   }
 
-  // Andernfalls: Animation abspielen
+  // Sonst: Animieren
   return (
     <AnimatePresence>
       <motion.div
