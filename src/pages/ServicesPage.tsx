@@ -1,8 +1,18 @@
 import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { BlurFade } from '../components/ui/blur-fade';
+import { useAnimation } from '../context/AnimationContext';
+import { useEffect } from 'react';
 
 export default function ServicesPage() {
   const navigate = useNavigate();
+  const { hasVisitedServicesPage, setHasVisitedServicesPage } = useAnimation();
+
+  useEffect(() => {
+    if (!hasVisitedServicesPage) {
+      setHasVisitedServicesPage(true);
+    }
+  }, [hasVisitedServicesPage, setHasVisitedServicesPage]);
 
   const scrollToContact = () => {
     navigate('/');
@@ -21,17 +31,20 @@ export default function ServicesPage() {
     <div>
       <section className="pt-32 py-24" style={{ backgroundColor: '#262626' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 dm-serif-text-regular" style={{ color: '#f59e0b' }}>
-              Unsere Foto-, Video- & Editing-Services
-            </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Von der ersten Idee bis zum fertigen Projekt – wir begleiten Sie mit Professionalität und Leidenschaft.
-            </p>
-          </div>
+          <BlurFade delay={0.25} inView={!hasVisitedServicesPage}>
+            <div className="text-center mb-16">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 dm-serif-text-regular" style={{ color: '#f59e0b' }}>
+                Unsere Foto-, Video- & Editing-Services
+              </h1>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Von der ersten Idee bis zum fertigen Projekt – wir begleiten Sie mit Professionalität und Leidenschaft.
+              </p>
+            </div>
+          </BlurFade>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <div className="service-box bg-gradient-to-br from-[#111111] to-[#181818] p-12 rounded-xl">
+          <BlurFade delay={0.5} inView={!hasVisitedServicesPage}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+              <div className="service-box bg-gradient-to-br from-[#111111] to-[#181818] p-12 rounded-xl">
               <img src="/assets/5dcbd8e8-73be-4b58-8b97-90007764cead.png" alt="icon" className="service-icon h-16 w-16 mb-6" />
               <h3 className="service-title text-xl font-bold text-white mb-4">Event- & Businessfotografie</h3>
               <p className="text-gray-300 text-sm mb-4 leading-relaxed">
@@ -94,9 +107,11 @@ export default function ServicesPage() {
                 <p className="text-gray-300 text-sm">Sie liefern das Material – und ich mache daraus ein Video, das professionell wirkt und direkt eingesetzt werden kann.</p>
               </div>
             </div>
-          </div>
+            </div>
+          </BlurFade>
 
-          <div className="bg-black p-12 rounded-xl text-center">
+          <BlurFade delay={0.75} inView={!hasVisitedServicesPage}>
+            <div className="bg-black p-12 rounded-xl text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Starten wir Ihr Projekt!
             </h2>
@@ -110,7 +125,8 @@ export default function ServicesPage() {
               Jetzt Beratung anfragen
               <ArrowRight className="group-hover:translate-x-1 transition-transform duration-300" size={20} />
             </button>
-          </div>
+            </div>
+          </BlurFade>
         </div>
       </section>
     </div>
