@@ -109,7 +109,7 @@ export default function ServicesPage() {
               Starten wir Ihr Projekt!
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Kontaktieren Sie uns für ein unverbindliches Erstgespräch und lassen Sie uns gemeinsam Ihre Vision verwirklichen.
+              Kontaktieren Sie mich für ein unverbindliches Erstgespräch und lassen Sie uns gemeinsam Ihre Vision verwirklichen.
             </p>
             <button
               onClick={scrollToContact}
