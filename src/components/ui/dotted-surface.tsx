@@ -6,152 +6,139 @@ type DottedSurfaceProps = Omit<React.ComponentProps<'div'>, 'ref'>;
 
 export function DottedSurface({ className, ...props }: DottedSurfaceProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const sceneRef = useRef<{
-    scene: THREE.Scene;
-    camera: THREE.PerspectiveCamera;
-    renderer: THREE.WebGLRenderer;
-    particles: THREE.Points[];
-    animationId: number;
-    count: number;
-  } | null>(null);
 
   useEffect(() => {
     if (!containerRef.current) return;
 
-    // Konfiguration
-    const SEPARATION = 100;
-    const AMOUNTX = 50;
-    const AMOUNTY = 50;
-
-    // Scene setup
-    const scene = new THREE.Scene();
+    // --- KONFIGURATION ---
+    // Hier kannst du die Farben und Dichte anpassen
+    const DOT_COLOR = 0xffffff; // Weiß
+    const BACKGROUND_COLOR = 0x000000; // Schwarz (nur für Nebel)
     
-    const camera = new THREE.PerspectiveCamera(
-      60,
-      window.innerWidth / window.innerHeight,
-      1,
-      10000,
-    );
-    camera.position.set(0, 400, 1200); // Kameraposition angepasst
-
-    const renderer = new THREE.WebGLRenderer({
-      alpha: true, // Wichtig für transparenten Hintergrund
-      antialias: true,
-    });
-    renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    
-    // Alten Canvas entfernen falls vorhanden (React StrictMode Cleanup)
-    while (containerRef.current.firstChild) {
-      containerRef.current.removeChild(containerRef.current.firstChild);
+    // Sicherheitscheck: Three.js muss geladen sein
+    if (!THREE) {
+      console.error("Three.js ist nicht installiert oder geladen!");
+      return;
     }
-    containerRef.current.appendChild(renderer.domElement);
 
-    // Partikel erstellen
-    const positions: number[] = [];
-    const colors: number[] = [];
+    try {
+      // Scene setup
+      const scene = new THREE.Scene();
+      scene.fog = new THREE.Fog(BACKGROUND_COLOR, 2000, 10000);
 
-    for (let ix = 0; ix < AMOUNTX; ix++) {
-      for (let iy = 0; iy < AMOUNTY; iy++) {
-        const x = ix * SEPARATION - (AMOUNTX * SEPARATION) / 2;
-        const y = 0;
-        const z = iy * SEPARATION - (AMOUNTY * SEPARATION) / 2;
+      const camera = new THREE.PerspectiveCamera(
+        60,
+        window.innerWidth / window.innerHeight,
+        1,
+        10000,
+      );
+      camera.position.set(0, 400, 1200);
 
-        positions.push(x, y, z);
-        
-        // Farbe: Weiß/Hellgrau für dunklen Hintergrund (Werte 0.0 bis 1.0)
-        // Hier leicht transparentes Weiß
-        colors.push(0.8, 0.8, 0.8); 
+      const renderer = new THREE.WebGLRenderer({
+        alpha: true, // Transparenter Hintergrund
+        antialias: true,
+      });
+      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      
+      // Alten Canvas entfernen (Cleanup)
+      const container = containerRef.current;
+      while (container.firstChild) {
+        container.removeChild(container.firstChild);
       }
-    }
+      container.appendChild(renderer.domElement);
 
-    const geometry = new THREE.BufferGeometry();
-    geometry.setAttribute(
-      'position',
-      new THREE.Float32BufferAttribute(positions, 3),
-    );
-    geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+      // Partikel erstellen
+      const SEPARATION = 100;
+      const AMOUNTX = 50;
+      const AMOUNTY = 50;
+      
+      const positions: number[] = [];
+      const colors: number[] = [];
 
-    const material = new THREE.PointsMaterial({
-      size: 4, // Größe der Punkte
-      vertexColors: true,
-      transparent: true,
-      opacity: 0.6, // Grund-Transparenz
-      sizeAttenuation: true,
-    });
-
-    const points = new THREE.Points(geometry, material);
-    scene.add(points);
-
-    let count = 0;
-    let animationId = 0;
-
-    const animate = () => {
-      animationId = requestAnimationFrame(animate);
-
-      const positionAttribute = geometry.attributes.position;
-      const positionsArray = positionAttribute.array as Float32Array;
-
-      let i = 0;
       for (let ix = 0; ix < AMOUNTX; ix++) {
         for (let iy = 0; iy < AMOUNTY; iy++) {
-          const index = i * 3;
-          
-          // Wellen-Animation berechnen
-          positionsArray[index + 1] =
-            Math.sin((ix + count) * 0.3) * 50 +
-            Math.sin((iy + count) * 0.5) * 50;
+          const x = ix * SEPARATION - (AMOUNTX * SEPARATION) / 2;
+          const y = 0;
+          const z = iy * SEPARATION - (AMOUNTY * SEPARATION) / 2;
 
-          i++;
+          positions.push(x, y, z);
+          // Helles Grau für die Punkte
+          colors.push(0.8, 0.8, 0.8); 
         }
       }
 
-      positionAttribute.needsUpdate = true;
-      renderer.render(scene, camera);
-      count += 0.1;
-    };
+      const geometry = new THREE.BufferGeometry();
+      geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+      geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
 
-    // Resize Handler
-    const handleResize = () => {
-      if (!containerRef.current) return;
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    };
+      const material = new THREE.PointsMaterial({
+        size: 4,
+        vertexColors: true,
+        transparent: true,
+        opacity: 0.7,
+      });
 
-    window.addEventListener('resize', handleResize);
-    animate();
+      const points = new THREE.Points(geometry, material);
+      scene.add(points);
 
-    // Referenzen speichern für Cleanup
-    sceneRef.current = {
-      scene,
-      camera,
-      renderer,
-      particles: [points],
-      animationId,
-      count,
-    };
+      // Animation Loop
+      let count = 0;
+      let animationId: number;
 
-    // Cleanup Funktion
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      
-      if (sceneRef.current) {
-        cancelAnimationFrame(sceneRef.current.animationId);
-        sceneRef.current.renderer.dispose();
-        if (containerRef.current) {
-          containerRef.current.innerHTML = '';
+      const animate = () => {
+        animationId = requestAnimationFrame(animate);
+
+        const positionAttribute = geometry.attributes.position;
+        const positionsArray = positionAttribute.array as Float32Array;
+
+        let i = 0;
+        for (let ix = 0; ix < AMOUNTX; ix++) {
+          for (let iy = 0; iy < AMOUNTY; iy++) {
+            const index = i * 3;
+            // Wellenbewegung
+            positionsArray[index + 1] =
+              Math.sin((ix + count) * 0.3) * 50 +
+              Math.sin((iy + count) * 0.5) * 50;
+            i++;
+          }
+        }
+        positionAttribute.needsUpdate = true;
+        renderer.render(scene, camera);
+        count += 0.1;
+      };
+
+      animate();
+
+      // Resize Handler
+      const handleResize = () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      };
+      window.addEventListener('resize', handleResize);
+
+      // Cleanup Funktion
+      return () => {
+        window.removeEventListener('resize', handleResize);
+        cancelAnimationFrame(animationId);
+        if (container.contains(renderer.domElement)) {
+          container.removeChild(renderer.domElement);
         }
         geometry.dispose();
         material.dispose();
-      }
-    };
-  }, []); // Keine Abhängigkeiten mehr nötig
+        renderer.dispose();
+      };
+    } catch (error) {
+      console.error("Fehler im DottedSurface:", error);
+    }
+  }, []);
 
   return (
     <div
       ref={containerRef}
-      className={cn('pointer-events-none fixed inset-0 -z-10 opacity-40', className)} // opacity-40 damit es nicht zu dominant ist
+      // ÄNDERUNG: z-50 sorgt dafür, dass es ÜBER allem liegt (zum Testen)
+      className={cn('pointer-events-none fixed inset-0 z-50', className)} 
       {...props}
     />
   );
