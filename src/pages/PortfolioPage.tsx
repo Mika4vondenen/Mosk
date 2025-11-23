@@ -87,34 +87,6 @@ export default function PortfolioPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {portfolioItems.map((item, index) => (
-              <div
-                key={index}
-                className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
-              >
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1F44] via-[#0A1F44]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                  <span className="text-[#F5B700] text-sm font-semibold mb-2">
-                    {item.category}
-                  </span>
-                  <h3 className="text-white text-2xl font-bold mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-300 text-sm">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
 
           <div className="bg-gradient-to-br from-[#0A1F44] to-[#0d2a5c] p-12 rounded-xl text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
