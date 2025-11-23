@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { DottedSurface } from '../components/ui/dotted-surface';
 
 const portfolioItems = [
   {
@@ -76,7 +77,8 @@ export default function PortfolioPage() {
 
   return (
     <div>
-      <section className="pt-32 py-24 bg-[#262626]">
+      <DottedSurface />
+      <section className="relative pt-32 py-24 bg-[#262626]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
