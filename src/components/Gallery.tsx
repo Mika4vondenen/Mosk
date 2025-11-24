@@ -122,7 +122,7 @@ export default function Gallery() {
             Galerie
           </h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Ein Einblick in unsere besten Werke
+            Ein Einblick in meine besten Werke
           </p>
         </div>
 
