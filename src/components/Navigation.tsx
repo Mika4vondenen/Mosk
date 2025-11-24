@@ -17,7 +17,7 @@ export default function Navigation() {
       setActiveSection('Über mich');
       return;
     } else if (location.pathname === '/portfolio') {
-      setActiveSection('Portfolio');
+      setActiveSection('Galerie');
       return;
     }
 
@@ -104,7 +104,7 @@ export default function Navigation() {
     { name: 'Home', image: '/assets/ChatGPT Image 20. Nov. 2025, 22_43_05.png', onClick: () => goToHome() },
     { name: 'Services', icon: Zap, onClick: () => goToServices() },
     { name: 'Über mich', icon: Info, onClick: () => goToAbout() },
-    { name: 'Portfolio', icon: Image, onClick: () => goToPortfolio() },
+    { name: 'Galerie', icon: Image, onClick: () => goToPortfolio() },
     { name: 'Kontakt', icon: Mail, onClick: () => scrollToContact() },
   ]
 
