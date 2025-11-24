@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { BlurFade } from './ui/blur-fade';
 
 interface GalleryItem {
   src: string;
@@ -117,16 +118,19 @@ export default function Gallery() {
   return (
     <section className="relative pt-40 pb-24 bg-black overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Galerie
-          </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            Ein Einblick in meine besten Werke
-          </p>
-        </div>
+        <BlurFade delay={0.25} inView sessionKey="gallery-header">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Galerie
+            </h2>
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+              Ein Einblick in meine besten Werke
+            </p>
+          </div>
+        </BlurFade>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <BlurFade delay={0.5} inView sessionKey="gallery-grid">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {galleryItems.map((item, index) => (
             <div
               key={index}
@@ -146,7 +150,8 @@ export default function Gallery() {
               </div>
             </div>
           ))}
-        </div>
+          </div>
+        </BlurFade>
       </div>
 
       {selectedIndex !== null && (
