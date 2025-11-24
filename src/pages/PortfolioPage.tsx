@@ -1,6 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { DottedSurface } from '../components/ui/dotted-surface';
+import { BGPattern } from '../components/ui/bg-pattern';
 
 const portfolioItems = [
   {
@@ -77,9 +77,9 @@ export default function PortfolioPage() {
 
   return (
     <div>
-      <DottedSurface />
-      <section className="relative pt-32 py-24 bg-[#262626]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative pt-32 py-24 bg-black overflow-hidden">
+        <BGPattern variant="grid" mask="fade-edges" fill="rgba(209, 213, 219, 0.15)" size={60} />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Portfolio
