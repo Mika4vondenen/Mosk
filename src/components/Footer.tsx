@@ -49,7 +49,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <a href="#services" className="text-gray-300 hover:text-[#F5B700] transition-colors duration-300">
-                  Leistungen
+                  Services
                 </a>
               </li>
               <li>
@@ -59,7 +59,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#portfolio" className="text-gray-300 hover:text-[#F5B700] transition-colors duration-300">
-                  Portfolio
+                  Galerie
                 </a>
               </li>
               <li>
