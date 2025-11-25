@@ -2,6 +2,21 @@ import { useState } from 'react';
 import { ChevronLeft, ChevronRight, X, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { BlurFade } from './ui/blur-fade';
+import img1 from '../../assets/SON03067.webp';
+import img2 from '../../assets/20230811-SON07808-Verbessert-RR.webp';
+import img3 from '../../assets/SON03143.webp';
+import img4 from '../../assets/20230813-SON08196-Verbessert-RR.webp';
+import img5 from '../../assets/20230811-SON07764.webp';
+import img6 from '../../assets/20230811-SON07819.webp';
+import img7 from '../../assets/20230812-SON08080-Verbessert-RR.webp';
+import img8 from '../../assets/SON03064.webp';
+import img9 from '../../assets/20230701-SON06425.webp';
+import img10 from '../../assets/20230701-SON06592.webp';
+import img11 from '../../assets/20230701-SON06842.webp';
+import img12 from '../../assets/20230701-SON07051-Verbessert-RR.webp';
+import img13 from '../../assets/20230811-SON07825-Verbessert-RR.webp';
+import img14 from '../../assets/20230812-SON07939.webp';
+import img15 from '../../assets/20230812-SON08038.webp';
 
 interface GalleryItem {
   src: string;
@@ -10,21 +25,21 @@ interface GalleryItem {
 }
 
 const galleryItems: GalleryItem[] = [
-  { src: '/assets/SON03067.webp', alt: 'Gallery image 1', category: 'Fotografie' },
-  { src: '/assets/20230811-SON07808-Verbessert-RR.webp', alt: 'Gallery image 2', category: 'Fotografie' },
-  { src: '/assets/SON03143.webp', alt: 'Gallery image 3', category: 'Fotografie' },
-  { src: '/assets/20230813-SON08196-Verbessert-RR.webp', alt: 'Gallery image 4', category: 'Fotografie' },
-  { src: '/assets/20230811-SON07764.webp', alt: 'Gallery image 5', category: 'Fotografie' },
-  { src: '/assets/20230811-SON07819.webp', alt: 'Gallery image 6', category: 'Fotografie' },
-  { src: '/assets/20230812-SON08080-Verbessert-RR.webp', alt: 'Gallery image 7', category: 'Fotografie' },
-  { src: '/assets/SON03064.webp', alt: 'Gallery image 8', category: 'Fotografie' },
-  { src: '/assets/20230701-SON06425.webp', alt: 'Gallery image 9', category: 'Fotografie' },
-  { src: '/assets/20230701-SON06592.webp', alt: 'Gallery image 10', category: 'Fotografie' },
-  { src: '/assets/20230701-SON06842.webp', alt: 'Gallery image 11', category: 'Fotografie' },
-  { src: '/assets/20230701-SON07051-Verbessert-RR.webp', alt: 'Gallery image 12', category: 'Fotografie' },
-  { src: '/assets/20230811-SON07825-Verbessert-RR.webp', alt: 'Gallery image 13', category: 'Fotografie' },
-  { src: '/assets/20230812-SON07939.webp', alt: 'Gallery image 14', category: 'Fotografie' },
-  { src: '/assets/20230812-SON08038.webp', alt: 'Gallery image 15', category: 'Fotografie' },
+  { src: img1, alt: 'Gallery image 1', category: 'Fotografie' },
+  { src: img2, alt: 'Gallery image 2', category: 'Fotografie' },
+  { src: img3, alt: 'Gallery image 3', category: 'Fotografie' },
+  { src: img4, alt: 'Gallery image 4', category: 'Fotografie' },
+  { src: img5, alt: 'Gallery image 5', category: 'Fotografie' },
+  { src: img6, alt: 'Gallery image 6', category: 'Fotografie' },
+  { src: img7, alt: 'Gallery image 7', category: 'Fotografie' },
+  { src: img8, alt: 'Gallery image 8', category: 'Fotografie' },
+  { src: img9, alt: 'Gallery image 9', category: 'Fotografie' },
+  { src: img10, alt: 'Gallery image 10', category: 'Fotografie' },
+  { src: img11, alt: 'Gallery image 11', category: 'Fotografie' },
+  { src: img12, alt: 'Gallery image 12', category: 'Fotografie' },
+  { src: img13, alt: 'Gallery image 13', category: 'Fotografie' },
+  { src: img14, alt: 'Gallery image 14', category: 'Fotografie' },
+  { src: img15, alt: 'Gallery image 15', category: 'Fotografie' },
 ];
 
 interface LightboxProps {

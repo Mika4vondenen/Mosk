@@ -2,6 +2,9 @@ import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { BlurFade } from '../components/ui/blur-fade';
 import { useAnimation } from '../context/AnimationContext';
+import icon1 from '../../assets/5dcbd8e8-73be-4b58-8b97-90007764cead.png';
+import icon2 from '../../assets/1d9e47f1-8932-407d-aeb3-9505a3ad35ef.png';
+import icon3 from '../../assets/c8561e14-7996-49e7-b4e0-e4b07a4612b4.png';
 
 export default function ServicesPage() {
   const navigate = useNavigate();
@@ -38,7 +41,7 @@ export default function ServicesPage() {
           <BlurFade delay={0.5} inView={showInitialAnimation} sessionKey="services-cards">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
               <div className="service-box bg-gradient-to-br from-[#111111] to-[#181818] p-12 rounded-xl">
-              <img src="/assets/5dcbd8e8-73be-4b58-8b97-90007764cead.png" alt="icon" className="service-icon h-16 w-16 mb-6" />
+              <img src={icon1} alt="icon" className="service-icon h-16 w-16 mb-6" />
               <h3 className="service-title text-xl font-bold text-white mb-4">Event- & Businessfotografie</h3>
               <p className="text-gray-300 text-sm mb-4 leading-relaxed">
                 Seit 2022 begleite ich Festivals, Events und Unternehmen mit professioneller Fotografie. Klare Farben, starke Momente und ein moderner Look stehen bei mir im Fokus.
@@ -59,7 +62,7 @@ export default function ServicesPage() {
               </div>
             </div>
             <div className="service-box bg-gradient-to-br from-[#111111] to-[#181818] p-12 rounded-xl">
-              <img src="/assets/1d9e47f1-8932-407d-aeb3-9505a3ad35ef.png" alt="icon" className="service-icon h-16 w-16 mb-6" />
+              <img src={icon2} alt="icon" className="service-icon h-16 w-16 mb-6" />
               <h3 className="service-title text-xl font-bold text-white mb-4">Videoproduktion</h3>
               <p className="text-gray-300 text-sm mb-4 leading-relaxed">
                 Seit 2021 produziere ich Eventfilme, Werbevideos und Social-Media-Content für lokale Unternehmen. Mein Fokus liegt auf dynamischen Bildern, klarer Bildsprache und Videos, die Wirkung erzeugen.
@@ -80,7 +83,7 @@ export default function ServicesPage() {
               </div>
             </div>
             <div className="service-box bg-gradient-to-br from-[#111111] to-[#181818] p-12 rounded-xl">
-              <img src="/assets/c8561e14-7996-49e7-b4e0-e4b07a4612b4.png" alt="icon" className="service-icon h-16 w-16 mb-6" />
+              <img src={icon3} alt="icon" className="service-icon h-16 w-16 mb-6" />
               <h3 className="service-title text-xl font-bold text-white mb-4">Post-Production / Editing</h3>
               <p className="text-gray-300 text-sm mb-4 leading-relaxed">
                 Seit über fünf Jahren arbeite ich im Bereich Editing und verwandle rohes Videomaterial in modernen, hochwertigen Content. Saubere Schnitte, stimmige Farben und klare Looks stehen dabei im Mittelpunkt.

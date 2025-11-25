@@ -2,6 +2,7 @@ import { Zap, Info, Image, Mail } from 'lucide-react';
 import { NavBar } from './ui/tubelight-navbar';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
+import logo from '../../public/ChatGPT Image 20. Nov. 2025, 13_15_32.png';
 
 export default function Navigation() {
   const navigate = useNavigate();
@@ -101,7 +102,7 @@ export default function Navigation() {
   };
 
   const navItems = [
-    { name: 'Home', image: '/assets/ChatGPT Image 20. Nov. 2025, 22_43_05.png', onClick: () => goToHome() },
+    { name: 'Home', onClick: () => goToHome() },
     { name: 'Services', icon: Zap, onClick: () => goToServices() },
     { name: 'Über mich', icon: Info, onClick: () => goToAbout() },
     { name: 'Galerie', icon: Image, onClick: () => goToPortfolio() },
@@ -116,7 +117,7 @@ export default function Navigation() {
           className="hover:opacity-80 transition-opacity duration-300"
         >
           <img
-            src="/ChatGPT Image 20. Nov. 2025, 13_15_32.png"
+            src={logo}
             alt="edit by mosk"
             className="h-20 w-auto"
           />
