@@ -1,4 +1,4 @@
-import { Zap, Info, Image, Mail } from 'lucide-react';
+import { Home, Zap, Info, Image, Mail } from 'lucide-react';
 import { NavBar } from './ui/tubelight-navbar';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
@@ -102,7 +102,7 @@ export default function Navigation() {
   };
 
   const navItems = [
-    { name: 'Home', onClick: () => goToHome() },
+    { name: 'Home', icon: Home, onClick: () => goToHome() },
     { name: 'Services', icon: Zap, onClick: () => goToServices() },
     { name: 'Über mich', icon: Info, onClick: () => goToAbout() },
     { name: 'Galerie', icon: Image, onClick: () => goToPortfolio() },
