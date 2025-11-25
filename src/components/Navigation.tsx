@@ -3,6 +3,7 @@ import { NavBar } from './ui/tubelight-navbar';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
 import logo from '../../public/ChatGPT Image 20. Nov. 2025, 13_15_32.png';
+import homeIcon from '../../assets/ChatGPT Image 20. Nov. 2025, 22_43_05.png';
 
 export default function Navigation() {
   const navigate = useNavigate();
@@ -102,7 +103,7 @@ export default function Navigation() {
   };
 
   const navItems = [
-    { name: 'Home', icon: Home, onClick: () => goToHome() },
+    { name: 'Home', image: homeIcon, onClick: () => goToHome() },
     { name: 'Services', icon: Zap, onClick: () => goToServices() },
     { name: 'Über mich', icon: Info, onClick: () => goToAbout() },
     { name: 'Galerie', icon: Image, onClick: () => goToPortfolio() },
