@@ -131,7 +131,7 @@ export default function Gallery() {
   };
 
   return (
-    <section className="relative pt-40 pb-24 bg-black overflow-hidden">
+    <section className="relative pt-40 pb-24 overflow-hidden" style={{ backgroundColor: '#262626' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <BlurFade delay={0.25} inView sessionKey="gallery-header">
           <div className="text-center mb-16">
