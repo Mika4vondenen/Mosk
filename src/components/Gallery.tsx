@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, X, ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { BlurFade } from './ui/blur-fade';
 
 interface GalleryItem {
@@ -102,6 +103,20 @@ function Lightbox({ item, index, total, onClose, onNext, onPrev }: LightboxProps
 
 export default function Gallery() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const navigate = useNavigate();
+
+  const scrollToContact = () => {
+    navigate('/');
+    setTimeout(() => {
+      const element = document.getElementById('contact');
+      if (element) {
+        const navHeight = 120;
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - navHeight;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+      }
+    }, 100);
+  };
 
   const handleNext = () => {
     if (selectedIndex !== null && selectedIndex < galleryItems.length - 1) {
@@ -150,6 +165,24 @@ export default function Gallery() {
               </div>
             </div>
           ))}
+          </div>
+        </BlurFade>
+
+        <BlurFade delay={0.75} inView sessionKey="gallery-cta">
+          <div className="bg-black p-12 rounded-xl text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Starten wir Ihr Projekt!
+            </h2>
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+              Kontaktieren Sie mich für ein unverbindliches Erstgespräch und lassen Sie uns gemeinsam Ihre Vision verwirklichen.
+            </p>
+            <button
+              onClick={scrollToContact}
+              className="group inline-flex items-center gap-3 bg-[#F5B700] text-[#0A1F44] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#ffc61a] transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl"
+            >
+              Jetzt Beratung anfragen
+              <ArrowRight className="group-hover:translate-x-1 transition-transform duration-300" size={20} />
+            </button>
           </div>
         </BlurFade>
       </div>
