@@ -111,19 +111,21 @@ export default function Navigation() {
   ]
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-black py-4 px-4">
+    <div className="fixed top-0 left-0 right-0 z-50 bg-black py-3 px-4 sm:py-4">
       <div className="flex justify-between items-start max-w-7xl mx-auto">
         <button
           onClick={goToHome}
-          className="hover:opacity-80 transition-opacity duration-300"
+          className="hover:opacity-80 transition-opacity duration-300 flex-shrink-0"
         >
           <img
             src={logo}
             alt="edit by mosk"
-            className="h-20 w-auto"
+            className="h-16 sm:h-20 w-auto"
           />
         </button>
-        <NavBar items={navItems} activeSection={activeSection} />
+        <div className="flex-shrink-0">
+          <NavBar items={navItems} activeSection={activeSection} />
+        </div>
       </div>
     </div>
   );

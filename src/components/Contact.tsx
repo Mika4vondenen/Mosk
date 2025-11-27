@@ -53,20 +53,20 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-[#262626]">
+    <section id="contact" className="py-16 sm:py-24 bg-[#262626]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#f59e0b] mb-4">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#f59e0b] mb-3 sm:mb-4">
             Kontakt aufnehmen
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
             Lassen Sie uns über Ihr Projekt sprechen. Wir freuen uns auf Ihre Anfrage!
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
           <div>
-            <h3 className="text-2xl font-bold text-[#f59e0b] mb-8">
+            <h3 className="text-xl sm:text-2xl font-bold text-[#f59e0b] mb-6 sm:mb-8">
               Schreiben Sie uns
             </h3>
 
@@ -152,7 +152,7 @@ export default function Contact() {
           </div>
 
           <div>
-            <h3 className="text-2xl font-bold text-[#f59e0b] mb-8">
+            <h3 className="text-xl sm:text-2xl font-bold text-[#f59e0b] mb-6 sm:mb-8">
               Kontaktinformationen
             </h3>
 
@@ -195,15 +195,15 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="bg-black p-8 rounded-xl">
-              <h4 className="text-2xl font-bold text-white mb-4">
+            <div className="bg-black p-6 sm:p-8 rounded-xl">
+              <h4 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">
                 Starten wir Ihr Projekt.
               </h4>
-              <p className="text-white mb-6 leading-relaxed">
+              <p className="text-sm sm:text-base text-white mb-4 sm:mb-6 leading-relaxed">
                 Ob Produktfotografie, Videoproduktion oder professionelles Editing – Ich setze Ihre Ideen professionell um. Kontaktieren Sie mich für ein unverbindliches Erstgespräch.
               </p>
-              <div className="flex items-center gap-2 text-[#FFB400] font-semibold">
-                <Clock size={20} />
+              <div className="flex items-center gap-2 text-[#FFB400] font-semibold text-sm sm:text-base">
+                <Clock size={18} className="flex-shrink-0" />
                 <span>Antwort innerhalb von 24 Stunden</span>
               </div>
             </div>

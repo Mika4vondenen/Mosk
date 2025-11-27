@@ -4,49 +4,49 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0A1F44] text-white py-12">
+    <footer className="bg-[#0A1F44] text-white py-8 sm:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold text-[#F5B700] mb-4">Edit by Mosk</h3>
-            <p className="text-gray-300 leading-relaxed mb-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
+          <div className="col-span-1 sm:col-span-2 lg:col-span-2">
+            <h3 className="text-xl sm:text-2xl font-bold text-[#F5B700] mb-3 sm:mb-4">Edit by Mosk</h3>
+            <p className="text-sm sm:text-base text-gray-300 leading-relaxed mb-3 sm:mb-4">
               Professionelle Foto-, Video- und Editing-Dienstleistungen für Privat- und Geschäftskunden in ganz Deutschland.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               <a
                 href="#"
-                className="bg-white/10 hover:bg-[#F5B700] w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
+                className="bg-white/10 hover:bg-[#F5B700] w-9 h-9 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
                 aria-label="Instagram"
               >
-                <Instagram size={20} />
+                <Instagram size={18} className="sm:w-5 sm:h-5" />
               </a>
               <a
                 href="#"
-                className="bg-white/10 hover:bg-[#F5B700] w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
+                className="bg-white/10 hover:bg-[#F5B700] w-9 h-9 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
                 aria-label="Facebook"
               >
-                <Facebook size={20} />
+                <Facebook size={18} className="sm:w-5 sm:h-5" />
               </a>
               <a
                 href="#"
-                className="bg-white/10 hover:bg-[#F5B700] w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
+                className="bg-white/10 hover:bg-[#F5B700] w-9 h-9 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
                 aria-label="LinkedIn"
               >
-                <Linkedin size={20} />
+                <Linkedin size={18} className="sm:w-5 sm:h-5" />
               </a>
               <a
                 href="mailto:info@editbymosk.de"
-                className="bg-white/10 hover:bg-[#F5B700] w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
+                className="bg-white/10 hover:bg-[#F5B700] w-9 h-9 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
                 aria-label="E-Mail"
               >
-                <Mail size={20} />
+                <Mail size={18} className="sm:w-5 sm:h-5" />
               </a>
             </div>
           </div>
 
           <div>
-            <h4 className="font-bold text-lg mb-4">Navigation</h4>
-            <ul className="space-y-2">
+            <h4 className="font-bold text-base sm:text-lg mb-3 sm:mb-4">Navigation</h4>
+            <ul className="space-y-2 text-sm sm:text-base">
               <li>
                 <a href="#services" className="text-gray-300 hover:text-[#F5B700] transition-colors duration-300">
                   Services
@@ -71,8 +71,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-bold text-lg mb-4">Rechtliches</h4>
-            <ul className="space-y-2">
+            <h4 className="font-bold text-base sm:text-lg mb-3 sm:mb-4">Rechtliches</h4>
+            <ul className="space-y-2 text-sm sm:text-base">
               <li>
                 <a href="#" className="text-gray-300 hover:text-[#F5B700] transition-colors duration-300">
                   Impressum
@@ -92,7 +92,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 text-center text-gray-400 text-sm">
+        <div className="border-t border-white/10 pt-6 sm:pt-8 text-center text-gray-400 text-xs sm:text-sm">
           <p>&copy; {currentYear} Edit by Mosk. Alle Rechte vorbehalten.</p>
         </div>
       </div>

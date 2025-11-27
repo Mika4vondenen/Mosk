@@ -80,35 +80,35 @@ function Lightbox({ item, index, total, onClose, onNext, onPrev }: LightboxProps
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 bg-white/10 hover:bg-white/20 rounded-lg p-2 transition-colors duration-200"
+          className="absolute top-2 right-2 sm:top-4 sm:right-4 z-10 bg-white/10 hover:bg-white/20 rounded-lg p-2 transition-colors duration-200"
           aria-label="Close lightbox"
         >
-          <X size={28} className="text-white" />
+          <X size={24} className="text-white sm:w-7 sm:h-7" />
         </button>
 
         <img
           src={item.src}
           alt={item.alt}
-          className="max-w-full max-h-[90vh] object-contain"
+          className="max-w-full max-h-[90vh] object-contain px-2 sm:px-0"
         />
 
         <button
           onClick={onPrev}
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 rounded-lg p-3 transition-colors duration-200"
+          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 rounded-lg p-2 sm:p-3 transition-colors duration-200"
           aria-label="Previous image"
         >
-          <ChevronLeft size={32} className="text-white" />
+          <ChevronLeft size={24} className="text-white sm:w-8 sm:h-8" />
         </button>
 
         <button
           onClick={onNext}
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 rounded-lg p-3 transition-colors duration-200"
+          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 rounded-lg p-2 sm:p-3 transition-colors duration-200"
           aria-label="Next image"
         >
-          <ChevronRight size={32} className="text-white" />
+          <ChevronRight size={24} className="text-white sm:w-8 sm:h-8" />
         </button>
 
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2 text-white text-sm">
+        <div className="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 bg-white/10 backdrop-blur-sm rounded-lg px-3 py-1 sm:px-4 sm:py-2 text-white text-xs sm:text-sm">
           {index + 1} / {total}
         </div>
       </div>
@@ -146,21 +146,21 @@ export default function Gallery() {
   };
 
   return (
-    <section className="relative pt-40 pb-24 overflow-hidden" style={{ backgroundColor: '#262626' }}>
+    <section className="relative pt-32 sm:pt-40 pb-16 sm:pb-24 overflow-hidden" style={{ backgroundColor: '#262626' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <BlurFade delay={0.25} inView sessionKey="gallery-header">
-          <div className="text-center mb-16">
-            <h2 className="text-6xl md:text-7xl font-bold text-white mb-6" style={{ fontFamily: "'Bebas Neue', sans-serif", fontWeight: 400 }}>
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6" style={{ fontFamily: "'Bebas Neue', sans-serif", fontWeight: 400 }}>
               Galerie
             </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto">
               Ein Einblick in meine besten Werke
             </p>
           </div>
         </BlurFade>
 
         <BlurFade delay={0.5} inView sessionKey="gallery-grid">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           {galleryItems.map((item, index) => (
             <div
               key={index}

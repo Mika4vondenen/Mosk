@@ -31,7 +31,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0A1F44] via-[#0d2a5c] to-[#0A1F44]">
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0A1F44] via-[#0d2a5c] to-[#0A1F44] pt-20 sm:pt-0">
       {images.map((image, index) => (
         <div
           key={image}
@@ -43,16 +43,16 @@ export default function Hero() {
         ></div>
       ))}
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-center">
         <BlurFade delay={0.25} inView={showInitialAnimation} sessionKey="hero-title">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: "'Bebas Neue', sans-serif", fontWeight: 400 }}>
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight" style={{ fontFamily: "'Bebas Neue', sans-serif", fontWeight: 400 }}>
             STARKE FOTOS. STARKE VIDEOS. STARKES EDITING.<br />
             <span className="text-[#f59e0b]">ALLES AUS EINER HAND.</span>
           </h1>
         </BlurFade>
 
         <BlurFade delay={0.5} inView={showInitialAnimation} sessionKey="hero-subtitle">
-          <p className="text-xl md:text-2xl text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed">
             Wir verwandeln Ihre Vision in visuelle Meisterwerke. Für Privatkunden und Unternehmen in ganz Deutschland.
           </p>
         </BlurFade>
