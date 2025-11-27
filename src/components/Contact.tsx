@@ -1,5 +1,6 @@
 import { Mail, Phone, MapPin, Send, Clock } from 'lucide-react';
 import { useState } from 'react';
+import { supabase } from '../lib/supabase';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -8,10 +9,36 @@ export default function Contact() {
     phone: '',
     message: ''
   });
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    setLoading(true);
+    setMessage(null);
+
+    try {
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone || null,
+            message: formData.message
+          }
+        ]);
+
+      if (error) throw error;
+
+      setMessage({ type: 'success', text: 'Nachricht erfolgreich gesendet! Wir werden uns in Kürze bei Ihnen melden.' });
+      setFormData({ name: '', email: '', phone: '', message: '' });
+    } catch (err) {
+      setMessage({ type: 'error', text: 'Fehler beim Senden der Nachricht. Bitte versuchen Sie es später erneut.' });
+      console.error('Error:', err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -105,11 +132,18 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="group w-full bg-[#f59e0b] text-black px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#ffc61a] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-3"
+                disabled={loading}
+                className="group w-full bg-[#f59e0b] text-black px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#ffc61a] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
-                Nachricht senden
+                {loading ? 'Wird gesendet...' : 'Nachricht senden'}
                 <Send className="group-hover:translate-x-1 transition-transform duration-300" size={20} />
               </button>
+
+              {message && (
+                <div className={`p-4 rounded-lg ${message.type === 'success' ? 'bg-green-500/20 text-green-300 border border-green-500/50' : 'bg-red-500/20 text-red-300 border border-red-500/50'}`}>
+                  {message.text}
+                </div>
+              )}
             </form>
           </div>
 
