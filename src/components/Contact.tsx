@@ -18,6 +18,10 @@ export default function Contact() {
     setMessage(null);
 
     try {
+      if (!supabase) {
+        throw new Error('Database connection not available');
+      }
+
       const { error } = await supabase
         .from('contact_submissions')
         .insert([
